@@ -1,0 +1,17 @@
+name: ticketing_analytics
+version: '1.0.0'
+config-version: 2
+profile: ticketing_analytics
+model-paths: ['models']
+macro-paths: ['macros']
+models:
+  ticketing_analytics:
+    staging:
+      +schema: STAGING
+      +materialized: view
+    intermediate:
+      +schema: STAGING
+      +materialized: table
+    marts:
+      +schema: MART
+      +materialized: table

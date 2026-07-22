@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: raw
+    database: TICKETING_DB
+    schema: RAW
+    tables:
+      - name: RAW_RESELLER_SALES

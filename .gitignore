@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+airflow/logs/*
+dbt/ticketing_analytics/target/
+dbt/ticketing_analytics/dbt_packages/
+.DS_Store

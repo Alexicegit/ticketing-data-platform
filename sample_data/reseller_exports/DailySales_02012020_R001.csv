@@ -1,0 +1,2 @@
+sale_date,reseller_id,reseller_name,reseller_region,event_id,event_name,event_type,ticket_type_id,ticket_name,sales_channel,quantity,unit_price,gross_amount,commission_rate,customer_email,currency
+2020-02-01,R001,Northwind Tickets,Europe,1001,Cloud Data Summit,Conference,5001,VIP,WEB,2,150.00,300.00,10.00,customer1@example.com,USD
