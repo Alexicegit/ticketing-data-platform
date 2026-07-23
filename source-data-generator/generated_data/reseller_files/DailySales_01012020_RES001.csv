@@ -1,0 +1,26 @@
+Transaction ID,Event name,Number of purchased tickets,Total amount,Sales channel,Customer first name,Customer last name,Office location,Created Date
+100000001,Sort Event,1,190.54,web,Angel,Ward,California Office,2020-01-01
+100000002,Key Event,3,232.8,web,William,Johnson,California Office,2020-01-01
+100000003,Each Event,5,779.15,web,Angel,Ward,California Office,2020-01-01
+100000004,Upon Event,2,172.94,web,Benjamin,Stevens,California Office,2020-01-01
+100000005,Building Event,2,553.7,office,Lori,Clark,California Office,2020-01-01
+100000006,Forward Event,1,250.14,office,Michael,Riddle,California Office,2020-01-01
+100000007,Key Event,5,1343.9,mobile app,Kelly,Lewis,California Office,2020-01-01
+100000008,Million Event,2,295.34,office,Connie,Ramos,California Office,2020-01-01
+100000009,Recognize Event,4,470.84,office,Sandy,Harrison,California Office,2020-01-01
+100000010,Challenge Event,5,727.35,web,Karen,Nelson,California Office,2020-01-01
+100000011,Deep Event,2,403.6,mobile app,Yolanda,Key,California Office,2020-01-01
+100000012,Compare Event,5,916.95,web,Michael,Jones,California Office,2020-01-01
+100000013,Small Event,4,685.36,web,Andrea,Pierce,California Office,2020-01-01
+100000014,Service Event,5,1384.95,mobile app,William,Cooper,California Office,2020-01-01
+100000015,Set Event,6,496.74,mobile app,Jared,Clark,California Office,2020-01-01
+100000016,Sometimes Event,5,748.9,web,Mary,Arroyo,California Office,2020-01-01
+100000017,Sing Event,4,894.8,web,Gary,Perkins,California Office,2020-01-01
+100000018,Take Event,4,511.52,web,Jennifer,Lopez,California Office,2020-01-01
+100000019,Deep Event,3,213.81,office,William,Barrera,California Office,2020-01-01
+100000020,Get Event,4,683.36,web,Brian,Evans,California Office,2020-01-01
+100000021,Central Event,3,572.58,web,Drew,Harvey,California Office,2020-01-01
+100000022,Anything Event,1,227.84,web,Nicholas,Reeves,California Office,2020-01-01
+100000023,Set Event,6,265.74,web,Haley,Lawrence,California Office,2020-01-01
+100000024,Serious Event,4,869.96,web,Robert,Stokes,California Office,2020-01-01
+100000025,Religious Event,4,330.16,web,John,Weiss,California Office,2020-01-01

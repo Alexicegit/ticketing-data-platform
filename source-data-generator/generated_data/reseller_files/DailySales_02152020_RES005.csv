@@ -1,0 +1,26 @@
+Transaction ID,Event name,Number of purchased tickets,Total amount,Sales channel,Customer first name,Customer last name,Office location,Created Date
+100000101,Including Event,3,781.68,mobile app,Catherine,Wells,Texas Office,2020-02-15
+100000102,From Event,5,174.9,mobile app,Jordan,Gardner,Texas Office,2020-02-15
+100000103,By Event,6,1457.64,web,Jennifer,Norman,Texas Office,2020-02-15
+100000104,And Event,4,531.56,web,Felicia,Williams,Texas Office,2020-02-15
+100000105,Management Event,3,621.69,web,Abigail,Downs,Texas Office,2020-02-15
+100000106,Long Event,2,536.58,mobile app,Gregory,Franco,Texas Office,2020-02-15
+100000107,Traditional Event,2,108.34,mobile app,Amy,Thomas,Texas Office,2020-02-15
+100000108,Health Event,3,762.93,web,Richard,Gross,Texas Office,2020-02-15
+100000109,Interest Event,6,1441.86,web,April,Mann,Texas Office,2020-02-15
+100000110,Subject Event,5,1069.95,web,Joshua,Mejia,Texas Office,2020-02-15
+100000111,Paper Event,4,803.6,web,Jaclyn,Davis,Texas Office,2020-02-15
+100000112,Itself Event,2,472.66,office,Anthony,Smith,Texas Office,2020-02-15
+100000113,Star Event,1,108.33,mobile app,Jessica,Guzman,Texas Office,2020-02-15
+100000114,Week Event,1,280.62,web,Pamela,Wolfe,Texas Office,2020-02-15
+100000115,Result Event,5,388.65,web,Wendy,Jones,Texas Office,2020-02-15
+100000116,Table Event,2,296.54,web,Robert,Payne,Texas Office,2020-02-15
+100000117,Paper Event,5,201.25,web,Aaron,Thornton,Texas Office,2020-02-15
+100000118,And Event,1,97.49,web,Jeremy,Hall,Texas Office,2020-02-15
+100000119,East Event,6,968.4,web,Tyler,Wright,Texas Office,2020-02-15
+100000120,Service Event,3,200.34,mobile app,Richard,Wright,Texas Office,2020-02-15
+100000121,Order Event,5,797.85,mobile app,Phyllis,Carpenter,Texas Office,2020-02-15
+100000122,Year Event,6,1789.14,mobile app,Sydney,Faulkner,Texas Office,2020-02-15
+100000123,Remember Event,5,892.15,mobile app,Tina,Cooper,Texas Office,2020-02-15
+100000124,Ok Event,2,62.92,web,Sierra,Khan,Texas Office,2020-02-15
+100000125,Notice Event,4,780.6,web,Ashley,Mata,Texas Office,2020-02-15

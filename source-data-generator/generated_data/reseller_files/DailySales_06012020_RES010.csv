@@ -1,0 +1,26 @@
+Transaction ID,Event name,Number of purchased tickets,Total amount,Sales channel,Customer first name,Customer last name,Office location,Created Date
+100000201,Word Event,5,1474.9,mobile app,Matthew,Oconnor,New York Office,2020-06-01
+100000202,Become Event,3,577.2,web,Scott,Cochran,New York Office,2020-06-01
+100000203,Total Event,3,266.88,web,William,Cervantes,New York Office,2020-06-01
+100000204,Whether Event,4,936.6,mobile app,Gary,Kemp,New York Office,2020-06-01
+100000205,Whether Event,1,194.59,office,Benjamin,Rosario,New York Office,2020-06-01
+100000206,Lawyer Event,3,602.1,mobile app,Nathan,Wright,New York Office,2020-06-01
+100000207,Wife Event,3,575.88,web,Roberto,Nunez,New York Office,2020-06-01
+100000208,Traditional Event,1,276.69,web,Aaron,Rose,New York Office,2020-06-01
+100000209,Beautiful Event,6,1101.06,web,Ann,Sellers,New York Office,2020-06-01
+100000210,Society Event,6,485.04,mobile app,Matthew,Wells,New York Office,2020-06-01
+100000211,Can Event,2,296.06,mobile app,Barbara,Bell,New York Office,2020-06-01
+100000212,Traditional Event,3,513.09,web,Edwin,Moore,New York Office,2020-06-01
+100000213,Official Event,2,504.44,web,Rebecca,Sloan,New York Office,2020-06-01
+100000214,Deal Event,4,316.04,web,Chad,Barrett,New York Office,2020-06-01
+100000215,Late Event,1,119.8,web,Sabrina,Ryan,New York Office,2020-06-01
+100000216,Experience Event,4,944.88,web,Brett,Sparks,New York Office,2020-06-01
+100000217,Exist Event,6,1688.46,web,Robert,Nichols,New York Office,2020-06-01
+100000218,Attention Event,2,75.36,web,Brian,Pruitt,New York Office,2020-06-01
+100000219,Side Event,6,1108.2,mobile app,Danielle,Dean,New York Office,2020-06-01
+100000220,Contain Event,5,1143.7,mobile app,Paul,Cisneros,New York Office,2020-06-01
+100000221,Message Event,6,354.12,office,Jennifer,Sheppard,New York Office,2020-06-01
+100000222,Make Event,3,97.05,web,Michael,Oliver,New York Office,2020-06-01
+100000223,Term Event,3,161.01,web,Emily,Richards,New York Office,2020-06-01
+100000224,What Event,2,137.92,web,Daniel,Smith,New York Office,2020-06-01
+100000225,Direction Event,2,387.42,mobile app,Margaret,Hill,New York Office,2020-06-01
