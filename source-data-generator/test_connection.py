@@ -1,0 +1,12 @@
+import os
+from dotenv import load_dotenv
+import psycopg2
+
+load_dotenv()
+
+conn = psycopg2.connect(
+    os.getenv("POSTGRES_CONNECTION_STRING")
+)
+
+print("Connected!")
+conn.close()
