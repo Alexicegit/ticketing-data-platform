@@ -43,7 +43,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=None,
     catchup=False,
-    tags=["example", "producer", "asset"],
+    tags=["producer", "asset"],
 ):
 
     def produce_asset_events():
@@ -61,7 +61,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=None,
     catchup=False,
-    tags=["example", "producer", "asset-alias"],
+    tags=["producer", "asset-alias"],
 ):
 
     def produce_asset_events_through_asset_alias_with_no_taskflow(*, outlet_events=None):
@@ -80,7 +80,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=[Asset("s3://bucket/my-task-with-no-taskflow")],
     catchup=False,
-    tags=["example", "consumer", "asset"],
+    tags=["consumer", "asset"],
 ):
 
     def consume_asset_event():
@@ -93,7 +93,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=[AssetAlias("example-alias-no-taskflow")],
     catchup=False,
-    tags=["example", "consumer", "asset-alias"],
+    tags=["consumer", "asset-alias"],
 ):
 
     def consume_asset_event_from_asset_alias(*, inlet_events=None):

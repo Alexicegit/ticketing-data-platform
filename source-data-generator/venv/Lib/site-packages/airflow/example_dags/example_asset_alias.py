@@ -42,7 +42,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=None,
     catchup=False,
-    tags=["example", "producer", "asset"],
+    tags=["producer", "asset"],
 ):
 
     @task(outlets=[Asset("s3://bucket/my-task")])
@@ -56,7 +56,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=None,
     catchup=False,
-    tags=["example", "producer", "asset-alias"],
+    tags=["producer", "asset-alias"],
 ):
 
     @task(outlets=[AssetAlias("example-alias")])
@@ -72,7 +72,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=[Asset("s3://bucket/my-task")],
     catchup=False,
-    tags=["example", "consumer", "asset"],
+    tags=["consumer", "asset"],
 ):
 
     @task
@@ -86,7 +86,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     schedule=[AssetAlias("example-alias")],
     catchup=False,
-    tags=["example", "consumer", "asset-alias"],
+    tags=["consumer", "asset-alias"],
 ):
 
     @task(inlets=[AssetAlias("example-alias")])

@@ -10,6 +10,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    PYTHONPATH: /opt/airflow
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/logs:/opt/airflow/logs
@@ -18,6 +19,7 @@ x-airflow-common: &airflow-common
     - ./scripts:/opt/airflow/scripts
     - ./sample_data:/opt/airflow/sample_data
     - ./dbt:/opt/airflow/dbt
+    - ./ingestion:/opt/airflow/ingestion
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     redis:

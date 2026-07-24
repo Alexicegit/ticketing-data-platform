@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 from uuid import uuid4
-from airflow import DAG
-from airflow.operators.bash import BashOperator
-from airflow.operators.python import PythonOperator
+from airflow_project import DAG
+from airflow_project.operators.bash import BashOperator
+from airflow_project.operators.python import PythonOperator
 
 def batch_id(**context):
     value = 'ticketing_' + datetime.utcnow().strftime('%Y%m%d%H%M%S') + '_' + uuid4().hex[:8]

@@ -17,7 +17,6 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterable
 from datetime import datetime
 
 from pydantic import AliasPath, Field
@@ -50,5 +49,5 @@ class EventLogResponse(BaseModel):
 class EventLogCollectionResponse(BaseModel):
     """Event Log Collection Response."""
 
-    event_logs: Iterable[EventLogResponse]
+    event_logs: list[EventLogResponse]
     total_entries: int
