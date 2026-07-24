@@ -2,11 +2,13 @@ import os
 import uuid
 
 from pathlib import Path
-from datetime import datetime
+
+from datetime import datetime, timezone
+
 
 import pandas as pd
 
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 
 import snowflake.connector
 
@@ -15,7 +17,7 @@ from dotenv import load_dotenv
 
 
 # ============================================================
-# ENV
+# ENVIRONMENT
 # ============================================================
 
 load_dotenv()
@@ -34,12 +36,9 @@ TEMP_DIR = BASE_DIR / "temp"
 
 MERGE_SQL_FILE = (
     BASE_DIR
-    /
-    "sql"
-    /
-    "snowflake"
-    /
-    "merge_raw_tables.sql"
+    / "sql"
+    / "snowflake"
+    / "merge_raw_tables.sql"
 )
 
 
@@ -50,83 +49,147 @@ TEMP_DIR.mkdir(
 
 
 # ============================================================
-# BATCH
+# BATCH INFORMATION
 # ============================================================
 
-BATCH_ID = str(uuid.uuid4())
+BATCH_ID = str(
+    uuid.uuid4()
+)
 
 
-JOB_START_TIME = datetime.utcnow().strftime(
-    "%Y-%m-%d %H:%M:%S"
+JOB_START_TIME = datetime.now(
+    timezone.utc
 )
 
 
 
 # ============================================================
-# TABLES
+# TABLE CONFIGURATION
 # ============================================================
 
 TABLES = {
 
-"ORGANIZERS":
-{
-"source":"b2b_ticketing.organizers",
-"stage":"ORGANIZERS",
-"stg":"RAW.STG_ORGANIZERS"
-},
+
+    "ORGANIZERS":
+    {
+
+        "source":
+        "b2b_ticketing.organizers",
+
+        "staging":
+        "RAW.STG_ORGANIZERS",
+
+        "target":
+        "RAW.ORGANIZERS",
+
+        "stage":
+        "NEON/ORGANIZERS"
+
+    },
 
 
-"RESELLERS":
-{
-"source":"b2b_ticketing.resellers",
-"stage":"RESELLERS",
-"stg":"RAW.STG_RESELLERS"
-},
+    "RESELLERS":
+    {
+
+        "source":
+        "b2b_ticketing.resellers",
+
+        "staging":
+        "RAW.STG_RESELLERS",
+
+        "target":
+        "RAW.RESELLERS",
+
+        "stage":
+        "NEON/RESELLERS"
+
+    },
 
 
-"CUSTOMERS":
-{
-"source":"b2b_ticketing.customers",
-"stage":"CUSTOMERS",
-"stg":"RAW.STG_CUSTOMERS"
-},
+    "CUSTOMERS":
+    {
+
+        "source":
+        "b2b_ticketing.customers",
+
+        "staging":
+        "RAW.STG_CUSTOMERS",
+
+        "target":
+        "RAW.CUSTOMERS",
+
+        "stage":
+        "NEON/CUSTOMERS"
+
+    },
 
 
-"EVENTS":
-{
-"source":"b2b_ticketing.events",
-"stage":"EVENTS",
-"stg":"RAW.STG_EVENTS"
-},
+    "EVENTS":
+    {
+
+        "source":
+        "b2b_ticketing.events",
+
+        "staging":
+        "RAW.STG_EVENTS",
+
+        "target":
+        "RAW.EVENTS",
+
+        "stage":
+        "NEON/EVENTS"
+
+    },
 
 
-"COMMISSION_AGREEMENTS":
-{
-"source":"b2b_ticketing.commission_agreements",
-"stage":"COMMISSION_AGREEMENTS",
-"stg":"RAW.STG_COMMISSION_AGREEMENTS"
-},
+    "COMMISSION_AGREEMENTS":
+    {
+
+        "source":
+        "b2b_ticketing.commission_agreements",
+
+        "staging":
+        "RAW.STG_COMMISSION_AGREEMENTS",
+
+        "target":
+        "RAW.COMMISSION_AGREEMENTS",
+
+        "stage":
+        "NEON/COMMISSION_AGREEMENTS"
+
+    },
 
 
-"TICKET_SALES":
-{
-"source":"b2b_ticketing.ticket_sales",
-"stage":"TICKET_SALES",
-"stg":"RAW.STG_TICKET_SALES"
+    "TICKET_SALES":
+    {
+
+        "source":
+        "b2b_ticketing.ticket_sales",
+
+        "staging":
+        "RAW.STG_TICKET_SALES",
+
+        "target":
+        "RAW.TICKET_SALES",
+
+        "stage":
+        "NEON/TICKET_SALES"
+
+    }
+
 }
 
-}
 
 
 
 # ============================================================
-# CONNECTIONS
+# NEON CONNECTION
 # ============================================================
 
-def neon_connection():
+def get_neon_connection():
 
 
-    url = (
+    connection_string = (
 
         "postgresql+psycopg2://"
 
@@ -145,127 +208,84 @@ def neon_connection():
     )
 
 
-    return create_engine(
-        url
+    engine = create_engine(
+
+        connection_string,
+
+        pool_pre_ping=True
+
     )
 
 
+    return engine
 
 
 
-def snowflake_connection():
+
+# ============================================================
+# SNOWFLAKE CONNECTION
+# ============================================================
+
+def get_snowflake_connection():
 
 
     return snowflake.connector.connect(
+
 
         account=os.getenv(
             "SNOWFLAKE_ACCOUNT"
         ),
 
+
         user=os.getenv(
             "SNOWFLAKE_USER"
         ),
+
 
         password=os.getenv(
             "SNOWFLAKE_PASSWORD"
         ),
 
+
         warehouse=os.getenv(
             "SNOWFLAKE_WAREHOUSE"
         ),
 
+
         database="B2B_EVENT_TICKETING",
+
 
         schema="RAW"
 
     )
-
-
-
-# ============================================================
-# CLEAN STAGE
-# ============================================================
-
-def clean_stage(sf):
-
-    cursor = sf.cursor()
-
-
-    cursor.execute(
-        """
-        REMOVE @RAW.INGEST_STAGE/NEON/
-        """
-    )
-
-
-    cursor.close()
-
-
-
-# ============================================================
-# CLEAN STAGING
-# ============================================================
-
-def truncate_stg(sf):
-
-    cursor = sf.cursor()
-
-
-    for table in TABLES:
-
-
-        cursor.execute(
-
-            f"""
-            TRUNCATE TABLE
-            {TABLES[table]["stg"]}
-            """
-
-        )
-
-
-    cursor.close()
-
-
-
 # ============================================================
 # WATERMARK
 # ============================================================
 
 def get_watermark(
-        sf,
-        table
+    sf,
+    table
 ):
 
     cursor = sf.cursor()
 
-
     cursor.execute(
-
         """
-
         SELECT LAST_UPDATED_AT
-
         FROM AUDIT.ETL_WATERMARK
-
-        WHERE SOURCE_TABLE=%s
-
+        WHERE SOURCE_TABLE = %s
         """,
-
         (
             table,
         )
-
     )
 
-
     result = cursor.fetchone()
-
 
     cursor.close()
 
 
-    if result:
+    if result and result[0]:
 
         return result[0]
 
@@ -278,12 +298,10 @@ def get_watermark(
 
 
 
-
-
 def update_watermark(
-        sf,
-        table,
-        value
+    sf,
+    table,
+    value
 ):
 
     cursor = sf.cursor()
@@ -292,28 +310,22 @@ def update_watermark(
     cursor.execute(
 
         """
-
         UPDATE AUDIT.ETL_WATERMARK
 
         SET
+            LAST_UPDATED_AT = %s,
 
-        LAST_UPDATED_AT =
-        TO_TIMESTAMP_NTZ(%s),
+            UPDATED_TS =
+            CURRENT_TIMESTAMP()
 
-        UPDATED_TS =
-        CURRENT_TIMESTAMP()
-
-        WHERE SOURCE_TABLE=%s
-
+        WHERE SOURCE_TABLE = %s
         """,
 
         (
 
-        value.strftime(
-            "%Y-%m-%d %H:%M:%S"
-        ),
+            value,
 
-        table
+            table
 
         )
 
@@ -324,54 +336,51 @@ def update_watermark(
 
 
 
+
 # ============================================================
-# EXTRACT
+# EXTRACT FROM NEON
 # ============================================================
 
 def extract(
-        engine,
-        table,
-        watermark
+
+    pg_engine,
+
+    table,
+
+    watermark
+
 ):
 
 
-    source = TABLES[table]["source"]
+    source_table = TABLES[table]["source"]
 
 
-    sql = text(
-
-        f"""
+    query = f"""
 
         SELECT *
 
-        FROM {source}
+        FROM {source_table}
 
-        WHERE updated_at > :wm
+        WHERE updated_at >
+        '{watermark}'
 
         ORDER BY updated_at
 
-        """
+    """
 
-    )
 
 
     df = pd.read_sql(
 
-        sql,
+        query,
 
-        engine,
-
-        params={
-            "wm": watermark
-        }
+        pg_engine
 
     )
 
 
     print(
-        table,
-        "ROWS:",
-        len(df)
+        f"{table} ROWS: {len(df)}"
     )
 
 
@@ -379,103 +388,151 @@ def extract(
 
 
 
+
+
 # ============================================================
-# PARQUET
+# CLEAN TIMESTAMP COLUMNS
 # ============================================================
 
-def create_parquet(
-        df,
-        table
+def normalize_dataframe(
+
+    df
+
 ):
 
 
-    # Convert timestamps to strings
+    timestamp_columns = [
 
-    for col in df.columns:
+        "LOAD_TS",
 
+        "UPDATED_AT"
 
-        if (
-            "date" in col.lower()
-            or
-            "time" in col.lower()
-        ):
+    ]
 
 
-            df[col] = (
 
-                pd.to_datetime(
-                    df[col],
-                    errors="coerce"
-                )
+    for col in timestamp_columns:
 
-                .dt.strftime(
-                    "%Y-%m-%d %H:%M:%S"
-                )
+
+        if col in df.columns:
+
+
+            df[col] = pd.to_datetime(
+
+                df[col],
+
+                errors="coerce"
 
             )
 
 
 
-    df["BATCH_ID"] = BATCH_ID
+    return df
 
 
-    df["LOAD_TS"] = (
-        datetime.utcnow()
-        .strftime(
-            "%Y-%m-%d %H:%M:%S"
-        )
+
+
+
+# ============================================================
+# CREATE PARQUET
+# ============================================================
+
+def create_parquet(
+
+    df,
+
+    table
+
+):
+
+
+    df = normalize_dataframe(
+
+        df
+
     )
+
+
+    df["BATCH_ID"] = BATCH_ID
 
 
     df["SOURCE_SYSTEM"] = "NEON"
 
 
 
-    file = (
+    df["LOAD_TS"] = datetime.now(
 
-        TEMP_DIR
+        timezone.utc
 
-        /
+    )
+
+
+
+    filename = (
 
         f"{table}_{BATCH_ID}.parquet"
 
     )
 
 
-    df.to_parquet(
-        file,
-        index=False
+
+    filepath = (
+
+        TEMP_DIR
+
+        /
+
+        filename
+
     )
 
 
-    return file
+
+    df.to_parquet(
+
+        filepath,
+
+        index=False
+
+    )
+
+
+    return filepath
+
+
 
 
 
 # ============================================================
-# PUT
+# CLEAR STAGE FOLDER
 # ============================================================
 
-def put_file(
-        sf,
-        file,
-        table
+def clear_stage_folder(
+
+    sf,
+
+    table
+
 ):
 
+
     cursor = sf.cursor()
+
+
+    stage_path = (
+
+        TABLES[table]["stage"]
+
+    )
 
 
     cursor.execute(
 
         f"""
 
-        PUT file://{file}
+        REMOVE
 
-        @RAW.INGEST_STAGE/NEON/{table}/
-
-        AUTO_COMPRESS=TRUE
-
-        OVERWRITE=TRUE
+        @RAW.INGEST_STAGE/{stage_path}/
 
         """
 
@@ -486,41 +543,150 @@ def put_file(
 
 
 
+
+
 # ============================================================
-# COPY
+# PUT PARQUET TO SNOWFLAKE STAGE
 # ============================================================
 
-def copy_stg(
-        sf,
-        table
+def put_file(
+
+    sf,
+
+    filepath,
+
+    table
+
 ):
 
 
     cursor = sf.cursor()
 
 
+    stage_path = (
+
+        TABLES[table]["stage"]
+
+    )
+
+
     cursor.execute(
 
         f"""
 
-        COPY INTO
-        {TABLES[table]["stg"]}
+        PUT
+
+        file://{filepath}
+
+        @RAW.INGEST_STAGE/{stage_path}/
+
+
+        AUTO_COMPRESS = TRUE
+
+
+        OVERWRITE = TRUE
+
+
+        """
+
+    )
+
+
+    cursor.close()
+
+
+
+
+
+# ============================================================
+# TRUNCATE STAGING TABLE
+# ============================================================
+
+def truncate_staging(
+
+    sf,
+
+    table
+
+):
+
+
+    cursor = sf.cursor()
+
+
+    staging = TABLES[table]["staging"]
+
+
+    cursor.execute(
+
+        f"""
+
+        TRUNCATE TABLE
+
+        {staging}
+
+        """
+
+    )
+
+
+    cursor.close()
+
+
+
+
+
+# ============================================================
+# COPY STAGE TO STAGING TABLE
+# ============================================================
+
+def copy_to_staging(
+
+    sf,
+
+    table
+
+):
+
+
+    cursor = sf.cursor()
+
+
+    staging = TABLES[table]["staging"]
+
+
+    stage_path = TABLES[table]["stage"]
+
+
+
+    cursor.execute(
+
+        f"""
+
+        COPY INTO {staging}
+
 
         FROM
-        @RAW.INGEST_STAGE/NEON/{table}/
+
+        @RAW.INGEST_STAGE/{stage_path}/
 
 
-        FILE_FORMAT=
+
+        FILE_FORMAT =
+
         (
-            FORMAT_NAME='RAW.PARQUET_FORMAT'
+
+            FORMAT_NAME =
+            'RAW.PARQUET_FORMAT'
+
         )
+
 
 
         MATCH_BY_COLUMN_NAME =
         CASE_INSENSITIVE
 
 
-        PURGE=FALSE
 
         """
 
@@ -530,166 +696,426 @@ def copy_stg(
     cursor.close()
 
 
+    print(
 
+        f"{table} COPIED TO STG"
+
+    )
 # ============================================================
-# MERGE
+# EXECUTE MERGE SQL
 # ============================================================
 
-def merge(sf):
+def execute_merge(
+
+    sf
+
+):
 
 
     cursor = sf.cursor()
 
 
     with open(
-        MERGE_SQL_FILE
-    ) as f:
 
-        sql=f.read()
+        MERGE_SQL_FILE,
 
+        "r"
 
-
-    for statement in sql.split(";"):
+    ) as file:
 
 
-        if statement.strip():
+        sql = file.read()
 
 
-            cursor.execute(
-                statement
-            )
 
-            print(
-                "MERGE DONE"
-            )
+    statements = [
+
+        stmt.strip()
+
+        for stmt in sql.split(";")
+
+        if stmt.strip()
+
+    ]
+
+
+
+    for stmt in statements:
+
+
+        cursor.execute(
+
+            stmt
+
+        )
+
 
 
     cursor.close()
 
 
 
+    print(
+
+        "MERGE COMPLETED"
+
+    )
+
+
+
+
+
 # ============================================================
-# MAIN
+# AUDIT
+# ============================================================
+
+def write_audit(
+
+    sf,
+
+    records
+
+):
+
+
+    cursor = sf.cursor()
+
+
+
+    cursor.execute(
+
+        """
+
+        INSERT INTO AUDIT.JOB_AUDIT
+
+        (
+
+            JOB_NAME,
+
+            START_TIME,
+
+            END_TIME,
+
+            STATUS,
+
+            RECORDS_LOADED
+
+        )
+
+
+        VALUES
+
+        (
+
+            %s,
+
+            %s,
+
+            CURRENT_TIMESTAMP(),
+
+            %s,
+
+            %s
+
+        )
+
+        """,
+
+        (
+
+            "NEON_TO_SNOWFLAKE",
+
+            JOB_START_TIME,
+
+            "SUCCESS",
+
+            records
+
+        )
+
+    )
+
+
+
+    cursor.close()
+
+
+
+
+
+# ============================================================
+# MAIN LOAD PROCESS
 # ============================================================
 
 def main():
 
 
-    neon = neon_connection()
+    pg = None
+
+    sf = None
 
 
-    sf = snowflake_connection()
+    total_records = 0
 
 
-    watermark_updates={}
-
-
-    total=0
+    watermark_updates = {}
 
 
 
     try:
 
 
-        clean_stage(sf)
+        pg = get_neon_connection()
 
 
-        truncate_stg(sf)
+        sf = get_snowflake_connection()
 
 
 
         for table in TABLES:
 
 
-            wm=get_watermark(
-                sf,
-                table
+            print(
+
+                f"PROCESSING {table}"
+
             )
 
 
-            df=extract(
-                neon,
+
+            # --------------------------------
+            # Get watermark
+            # --------------------------------
+
+            watermark = get_watermark(
+
+                sf,
+
+                table
+
+            )
+
+
+
+            # --------------------------------
+            # Extract
+            # --------------------------------
+
+            df = extract(
+
+                pg,
+
                 table,
-                wm
+
+                watermark
+
             )
 
 
 
             if df.empty:
 
+
+                print(
+
+                    f"NO DATA {table}"
+
+                )
+
+
                 continue
 
 
 
-            total += len(df)
+
+            total_records += len(df)
 
 
 
-            max_updated = pd.to_datetime(
-                df["updated_at"]
-            ).max()
+            # --------------------------------
+            # Save watermark
+            # --------------------------------
+
+            if "updated_at" in df.columns:
+
+
+                watermark_updates[table] = (
+
+                    pd.to_datetime(
+
+                        df["updated_at"]
+
+                    )
+
+                    .max()
+
+                    .to_pydatetime()
+
+                )
 
 
 
-            watermark_updates[table]=datetime.strptime(
+            # --------------------------------
+            # Clear stage
+            # --------------------------------
 
-                str(max_updated)[:19],
+            clear_stage_folder(
 
-                "%Y-%m-%d %H:%M:%S"
+                sf,
 
-            )
-
-
-
-            file=create_parquet(
-                df,
                 table
+
             )
 
+
+
+            # --------------------------------
+            # Truncate STG
+            # --------------------------------
+
+            truncate_staging(
+
+                sf,
+
+                table
+
+            )
+
+
+
+            # --------------------------------
+            # Create parquet
+            # --------------------------------
+
+            parquet_file = create_parquet(
+
+                df,
+
+                table
+
+            )
+
+
+
+            # --------------------------------
+            # PUT
+            # --------------------------------
 
             put_file(
+
                 sf,
-                file,
+
+                parquet_file,
+
                 table
+
             )
 
 
-            copy_stg(
+
+            # --------------------------------
+            # COPY
+            # --------------------------------
+
+            copy_to_staging(
+
                 sf,
+
                 table
+
             )
 
 
 
-        merge(sf)
+
+        # ------------------------------------
+        # MERGE STG -> RAW
+        # ------------------------------------
+
+        execute_merge(
+
+            sf
+
+        )
 
 
 
-        for table,value in watermark_updates.items():
+
+        # ------------------------------------
+        # Update watermark
+        # ------------------------------------
+
+        for table, value in watermark_updates.items():
 
 
             update_watermark(
+
                 sf,
+
                 table,
+
                 value
+
             )
 
 
-        print(
-            "TOTAL RECORDS:",
-            total
+
+
+
+        # ------------------------------------
+        # Audit
+        # ------------------------------------
+
+        write_audit(
+
+            sf,
+
+            total_records
+
         )
+
+
+
+        print(
+
+            "LOAD FINISHED"
+
+        )
+
+
+        print(
+
+            f"TOTAL RECORDS: {total_records}"
+
+        )
+
 
 
     finally:
 
 
-        neon.dispose()
 
-        sf.close()
-
+        if pg:
 
 
-if __name__=="__main__":
+            pg.dispose()
+
+
+
+        if sf:
+
+
+            sf.close()
+
+
+
+
+
+# ============================================================
+# LOCAL EXECUTION
+# ============================================================
+
+if __name__ == "__main__":
+
 
     main()

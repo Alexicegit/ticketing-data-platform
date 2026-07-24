@@ -13,8 +13,8 @@ import re
 import pandas as pd
 
 from datetime import datetime, timezone
-from .github_client import GitHubClient
-from .snowflake_loader import SnowflakeLoader
+from github_client import GitHubClient
+from snowflake_loader import SnowflakeLoader
 
 
 # ==========================================================

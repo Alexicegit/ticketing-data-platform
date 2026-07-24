@@ -1,16 +1,29 @@
-from datetime import datetime, timedelta
 import sys
 import os
+from datetime import datetime, timedelta
+from pathlib import Path
 
 
-PROJECT_ROOT = "/opt/airflow"
+
+
+# ============================================================
+# PROJECT ROOT
+# ============================================================
+
+PROJECT_ROOT = str(
+    Path(__file__).resolve().parents[2]
+)
+
 
 if PROJECT_ROOT not in sys.path:
     sys.path.append(PROJECT_ROOT)
 
 
+
 from airflow import DAG
+
 from airflow.operators.python import PythonOperator
+
 
 from ingestion.github_loader import GitHubLoader
 
@@ -44,7 +57,7 @@ with DAG(
 
     default_args=default_args,
 
-    schedule_interval="0 2 * * *",
+    schedule="0 2 * * *",
 
     start_date=datetime(2026, 1, 1),
 

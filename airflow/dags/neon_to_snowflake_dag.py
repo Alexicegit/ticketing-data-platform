@@ -4,17 +4,33 @@ from airflow import DAG
 
 from airflow.operators.python import PythonOperator
 
+
 import sys
+from pathlib import Path
 
 
-sys.path.append(
-    "/path/to/ticketing-data-platform/ingestion"
-)
+# ============================================================
+# ADD PROJECT ROOT
+# ============================================================
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-from neon_to_snowflake_loader import main
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
 
+# ============================================================
+# IMPORT LOADER
+# ============================================================
+
+from ingestion.neon_to_snowflake_loader import main
+
+
+
+# ============================================================
+# DEFAULT ARGS
+# ============================================================
 
 default_args = {
 
@@ -30,22 +46,31 @@ default_args = {
 
 
 
+# ============================================================
+# DAG
+# ============================================================
+
 with DAG(
 
     dag_id="neon_to_snowflake_daily",
 
     default_args=default_args,
 
-    description="Load Neon data into Snowflake RAW",
+    description="Load Neon PostgreSQL data into Snowflake RAW",
 
-    schedule="@daily",
+    schedule="0 3 * * *",
 
-    start_date=datetime(2026,1,1),
+    start_date=datetime(2026, 1, 1),
 
-    catchup=False
+    catchup=False,
+
+    tags=[
+        "neon",
+        "snowflake",
+        "raw"
+    ]
 
 ) as dag:
-
 
 
     load_neon_to_raw = PythonOperator(
@@ -55,7 +80,6 @@ with DAG(
         python_callable=main
 
     )
-
 
 
     load_neon_to_raw
