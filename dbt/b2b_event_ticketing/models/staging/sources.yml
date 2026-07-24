@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: B2B_EVENT_TICKETING
+    schema: RAW
+
+    tables:
+      - name: CUSTOMERS
+      - name: EVENTS
+      - name: ORGANIZERS
+      - name: RESELLERS
+      - name: COMMISSION_AGREEMENTS
+      - name: TICKET_SALES
+      - name: RESELLER_DAILY_SALES

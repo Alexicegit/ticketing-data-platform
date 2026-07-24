@@ -171,6 +171,7 @@ for organizer_id in organizers_df["organizer_id"]:
 
 commission_df = pd.DataFrame(agreements)
 
+
 # =========================================================
 # EVENTS
 # =========================================================
@@ -178,6 +179,37 @@ commission_df = pd.DataFrame(agreements)
 print("Generating events...")
 
 events = []
+
+used_event_names = set()
+
+
+EVENT_PREFIXES = [
+    "Global",
+    "Annual",
+    "International",
+    "Premier",
+    "Ultimate",
+    "National",
+    "World",
+    "City",
+    "Elite",
+    "Grand"
+]
+
+
+EVENT_NAMES = [
+    "Championship",
+    "Festival",
+    "Conference",
+    "Summit",
+    "Concert",
+    "Showcase",
+    "Expo",
+    "Tournament",
+    "Awards",
+    "Experience"
+]
+
 
 for i in range(1, NUM_EVENTS + 1):
 
@@ -189,20 +221,55 @@ for i in range(1, NUM_EVENTS + 1):
         EVENT_TYPES_BY_REGION[region]
     )
 
+
     event_date = random_date(
         START_DATE,
         END_DATE
     )
 
+
+    # Generate unique event name
+
+    while True:
+
+        event_name = (
+            f"{random.choice(EVENT_PREFIXES)} "
+            f"{random.choice(EVENT_NAMES)} "
+            f"{fake.city()} "
+            f"{event_date.year}"
+        )
+
+
+        if event_name not in used_event_names:
+            used_event_names.add(event_name)
+            break
+
+
     events.append({
-        "event_id": f"EVT{i:05}",
-        "organizer_id": organizer["organizer_id"],
-        "event_name": f"{fake.word().title()} Event",
-        "event_type": event_type,
-        "venue": fake.company(),
-        "region": region,
-        "event_date": event_date
+
+        "event_id":
+            f"EVT{i:05}",
+
+        "organizer_id":
+            organizer["organizer_id"],
+
+        "event_name":
+            event_name,
+
+        "event_type":
+            event_type,
+
+        "venue":
+            fake.company(),
+
+        "region":
+            region,
+
+        "event_date":
+            event_date
+
     })
+
 
 events_df = pd.DataFrame(events)
 

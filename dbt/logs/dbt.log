@@ -556,3 +556,359 @@ There are 2 unused configuration paths:
 [0m20:15:49.002836 [debug] [MainThread]: Command `dbt run` succeeded at 20:15:49.002836 after 8.85 seconds
 [0m20:15:49.004847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015D3EBA4FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015D3EC86510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015D5938C250>]}
 [0m20:15:49.006858 [debug] [MainThread]: Flushing usage events
+[0m21:00:01.253826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF283B190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF2794ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF2795010>]}
+
+
+============================== 21:00:01.256805 | d3f366d3-f546-4e89-987f-6cff85902858 ==============================
+[0m21:00:01.256805 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:00:01.256805 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '../config', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt parse --profiles-dir ../config', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:00:26.225793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd3f366d3-f546-4e89-987f-6cff85902858', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A8AAE2550>]}
+[0m21:00:26.262269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd3f366d3-f546-4e89-987f-6cff85902858', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF1C30A10>]}
+[0m21:00:26.262269 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m21:00:27.045466 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m21:00:32.104357 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:00:32.107880 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:00:32.109974 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.marts
+- models.b2b_event_ticketing.staging
+[0m21:00:32.120393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd3f366d3-f546-4e89-987f-6cff85902858', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A8CA9A690>]}
+[0m21:00:32.133375 [info ] [MainThread]: Performance info: C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\target\perf_info.json
+[0m21:00:32.229385 [debug] [MainThread]: Command `dbt parse` succeeded at 21:00:32.229385 after 31.15 seconds
+[0m21:00:32.231409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF2837050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF28367D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AF2836590>]}
+[0m21:00:32.231409 [debug] [MainThread]: Flushing usage events
+[0m21:06:14.683616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43A82A510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43A82AA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43A829A90>]}
+
+
+============================== 21:06:14.694697 | f459a7d8-f331-4298-a790-8e7af415211a ==============================
+[0m21:06:14.694697 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:06:14.694697 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'profiles_dir': '..\\config', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir ..\\config', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:06:16.087883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f459a7d8-f331-4298-a790-8e7af415211a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F454BA85D0>]}
+[0m21:06:16.132005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f459a7d8-f331-4298-a790-8e7af415211a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F439C0C990>]}
+[0m21:06:16.135243 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m21:06:16.380704 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m21:06:16.548656 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:06:16.549699 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:06:16.549699 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.marts
+- models.b2b_event_ticketing.staging
+[0m21:06:16.553679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f459a7d8-f331-4298-a790-8e7af415211a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F454B83950>]}
+[0m21:06:16.628751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f459a7d8-f331-4298-a790-8e7af415211a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F45509DE10>]}
+[0m21:06:16.628751 [info ] [MainThread]: Found 459 macros
+[0m21:06:16.630269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f459a7d8-f331-4298-a790-8e7af415211a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43A827790>]}
+[0m21:06:16.631292 [info ] [MainThread]: 
+[0m21:06:16.632295 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m21:06:16.633351 [debug] [MainThread]: Command end result
+[0m21:06:16.714298 [debug] [MainThread]: Command `dbt run` succeeded at 21:06:16.714298 after 2.11 seconds
+[0m21:06:16.714298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43406E990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43406EAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F439490350>]}
+[0m21:06:16.714298 [debug] [MainThread]: Flushing usage events
+[0m21:06:50.333789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ECF9B590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3EC9C29D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ECD86B50>]}
+
+
+============================== 21:06:50.335072 | f97cda42-fbb9-46a4-9a6f-eba67770759f ==============================
+[0m21:06:50.335072 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:06:50.335072 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'debug': 'False', 'profiles_dir': '..\\config', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt test --profiles-dir ..\\config', 'send_anonymous_usage_stats': 'True'}
+[0m21:06:51.351225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f97cda42-fbb9-46a4-9a6f-eba67770759f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3873121D0>]}
+[0m21:06:51.392679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f97cda42-fbb9-46a4-9a6f-eba67770759f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3EC37C9D0>]}
+[0m21:06:51.393779 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m21:06:51.647037 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m21:06:51.831502 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:06:51.831502 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:06:51.831502 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.marts
+- models.b2b_event_ticketing.staging
+[0m21:06:51.836948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f97cda42-fbb9-46a4-9a6f-eba67770759f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3877B4450>]}
+[0m21:06:51.915535 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f97cda42-fbb9-46a4-9a6f-eba67770759f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C387620DD0>]}
+[0m21:06:51.916541 [info ] [MainThread]: Found 459 macros
+[0m21:06:51.916541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f97cda42-fbb9-46a4-9a6f-eba67770759f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38763C050>]}
+[0m21:06:51.918575 [info ] [MainThread]: 
+[0m21:06:51.919535 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m21:06:51.920553 [debug] [MainThread]: Command end result
+[0m21:06:52.000839 [debug] [MainThread]: Command `dbt test` succeeded at 21:06:52.000839 after 1.76 seconds
+[0m21:06:52.001841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ECFFBF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3872A49D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3E6836750>]}
+[0m21:06:52.001841 [debug] [MainThread]: Flushing usage events
+[0m21:07:45.340348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F17496B2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F17480DFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F17496B3D0>]}
+
+
+============================== 21:07:45.344756 | 537d5cf4-a371-4122-afeb-300bef0fd859 ==============================
+[0m21:07:45.344756 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:07:45.345812 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'profiles_dir': '..\\config', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt ls --select resource_type:model --profiles-dir ..\\config', 'send_anonymous_usage_stats': 'True'}
+[0m21:07:46.582068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '537d5cf4-a371-4122-afeb-300bef0fd859', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F10C7A5050>]}
+[0m21:07:46.629357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '537d5cf4-a371-4122-afeb-300bef0fd859', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F173D5CA90>]}
+[0m21:07:46.629357 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m21:07:46.918992 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m21:07:47.074702 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:07:47.074702 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:07:47.074702 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.staging
+- models.b2b_event_ticketing.marts
+[0m21:07:47.082812 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '537d5cf4-a371-4122-afeb-300bef0fd859', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F10F1FD190>]}
+[0m21:07:47.161352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '537d5cf4-a371-4122-afeb-300bef0fd859', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F10F39AC90>]}
+[0m21:07:47.162860 [info ] [MainThread]: Found 459 macros
+[0m21:07:47.164230 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '537d5cf4-a371-4122-afeb-300bef0fd859', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F10F111BD0>]}
+[0m21:07:47.165240 [warn ] [MainThread]: The selection criterion 'resource_type:model' does not match any enabled nodes
+[0m21:07:47.167404 [warn ] [MainThread]: No nodes selected!
+[0m21:07:47.167404 [debug] [MainThread]: Command `dbt ls` succeeded at 21:07:47.167404 after 1.93 seconds
+[0m21:07:47.169600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F174966750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F10F174190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F10F061050>]}
+[0m21:07:47.169600 [debug] [MainThread]: Flushing usage events
+[0m21:12:44.220024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001675D8E3C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016760845110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016760939C50>]}
+
+
+============================== 21:12:44.223702 | afe60841-2671-4ca3-ab0c-ac01371e7fe5 ==============================
+[0m21:12:44.223702 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:12:44.223702 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'version_check': 'True', 'profiles_dir': '..\\config', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ls --profiles-dir ..\\config', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:12:45.719079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'afe60841-2671-4ca3-ab0c-ac01371e7fe5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001677ACA5790>]}
+[0m21:12:45.758701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'afe60841-2671-4ca3-ab0c-ac01371e7fe5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001675FCCCA90>]}
+[0m21:12:45.760699 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m21:12:46.059271 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m21:12:46.238662 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:12:46.239668 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:12:46.239668 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.marts
+- models.b2b_event_ticketing.staging
+[0m21:12:46.242880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'afe60841-2671-4ca3-ab0c-ac01371e7fe5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001677B104C50>]}
+[0m21:12:46.328050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'afe60841-2671-4ca3-ab0c-ac01371e7fe5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001677B30ECD0>]}
+[0m21:12:46.328050 [info ] [MainThread]: Found 459 macros
+[0m21:12:46.329050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'afe60841-2671-4ca3-ab0c-ac01371e7fe5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001677AC404D0>]}
+[0m21:12:46.330052 [warn ] [MainThread]: No nodes selected!
+[0m21:12:46.330052 [debug] [MainThread]: Command `dbt ls` succeeded at 21:12:46.330052 after 2.20 seconds
+[0m21:12:46.331092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016760925190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000167609392D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001677AFFF810>]}
+[0m21:12:46.331092 [debug] [MainThread]: Flushing usage events
+[0m22:58:59.947436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D6D1BAB50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D6CBBD190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D6CBBC490>]}
+
+
+============================== 22:58:59.954298 | 48c18ce6-fb17-4440-b631-b8888f971875 ==============================
+[0m22:58:59.954298 [info ] [MainThread]: Running with dbt=1.8.4
+[0m22:58:59.955308 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..\\config', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\config', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:58:59.961300 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m22:58:59.962305 [debug] [MainThread]: Command `dbt run` failed at 22:58:59.962305 after 0.19 seconds
+[0m22:58:59.962305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D6D1B1F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D6D2222D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019D66AA9E90>]}
+[0m22:58:59.963301 [debug] [MainThread]: Flushing usage events
+[0m22:59:16.558602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AEC599FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AEC596BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AEC59A010>]}
+
+
+============================== 22:59:16.564201 | 8cb96eb4-3abe-46de-af8e-f36cbf8fb168 ==============================
+[0m22:59:16.564201 [info ] [MainThread]: Running with dbt=1.8.4
+[0m22:59:16.565200 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\config', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug --profiles-dir C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\config', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:59:16.607476 [info ] [MainThread]: dbt version: 1.8.4
+[0m22:59:16.607476 [info ] [MainThread]: python version: 3.11.9
+[0m22:59:16.607476 [info ] [MainThread]: python path: C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\source-data-generator\venv\Scripts\python.exe
+[0m22:59:16.607476 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m22:59:36.251419 [info ] [MainThread]: Using profiles dir at C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\config
+[0m22:59:36.251419 [info ] [MainThread]: Using profiles.yml file at C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\config\profiles.yml
+[0m22:59:36.251419 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml
+[0m22:59:36.251419 [info ] [MainThread]: adapter type: snowflake
+[0m22:59:36.251419 [info ] [MainThread]: adapter version: 1.8.3
+[0m22:59:36.339010 [info ] [MainThread]: Configuration:
+[0m22:59:36.340515 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:59:36.341880 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:59:36.342388 [info ] [MainThread]: Required dependencies:
+[0m22:59:36.342388 [debug] [MainThread]: Executing "git --help"
+[0m22:59:36.409145 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:59:36.409145 [debug] [MainThread]: STDERR: "b''"
+[0m22:59:36.411147 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:59:36.411147 [info ] [MainThread]: Connection:
+[0m22:59:36.412147 [info ] [MainThread]:   account: fxgfljg-rn92157
+[0m22:59:36.412147 [info ] [MainThread]:   user: imtiyazfgs
+[0m22:59:36.412147 [info ] [MainThread]:   database: B2B_EVENT_TICKETING
+[0m22:59:36.413652 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m22:59:36.413652 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m22:59:36.414659 [info ] [MainThread]:   schema: STAGING
+[0m22:59:36.414659 [info ] [MainThread]:   authenticator: None
+[0m22:59:36.415659 [info ] [MainThread]:   oauth_client_id: None
+[0m22:59:36.415659 [info ] [MainThread]:   query_tag: None
+[0m22:59:36.415659 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:59:36.417663 [info ] [MainThread]:   host: None
+[0m22:59:36.417663 [info ] [MainThread]:   port: None
+[0m22:59:36.417663 [info ] [MainThread]:   proxy_host: None
+[0m22:59:36.417663 [info ] [MainThread]:   proxy_port: None
+[0m22:59:36.417663 [info ] [MainThread]:   protocol: None
+[0m22:59:36.420441 [info ] [MainThread]:   connect_retries: 1
+[0m22:59:36.420441 [info ] [MainThread]:   connect_timeout: None
+[0m22:59:36.420441 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:59:36.420441 [info ] [MainThread]:   retry_all: False
+[0m22:59:36.420441 [info ] [MainThread]:   insecure_mode: False
+[0m22:59:36.422449 [info ] [MainThread]:   reuse_connections: None
+[0m22:59:36.422449 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m22:59:36.884083 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:59:36.884083 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:59:36.884083 [debug] [MainThread]: On debug: select 1 as id
+[0m22:59:36.884083 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:59:38.457226 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.570 seconds
+[0m22:59:38.460304 [debug] [MainThread]: On debug: Close
+[0m22:59:38.543861 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:59:38.544771 [info ] [MainThread]: [32mAll checks passed![0m
+[0m22:59:38.545753 [debug] [MainThread]: Command `dbt debug` succeeded at 22:59:38.545753 after 22.09 seconds
+[0m22:59:38.546378 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m22:59:38.546378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AEC4F4C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AE95F7850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AEB148550>]}
+[0m22:59:38.546378 [debug] [MainThread]: Flushing usage events
+[0m22:59:46.233058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AD0DEE7F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AD0DFF19D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AD0DFA2690>]}
+
+
+============================== 22:59:46.233058 | 5233a127-9f1b-46bf-9463-6e5203152651 ==============================
+[0m22:59:46.233058 [info ] [MainThread]: Running with dbt=1.8.4
+[0m22:59:46.233058 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..\\config', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\config', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:59:46.248022 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m22:59:46.248022 [debug] [MainThread]: Command `dbt run` failed at 22:59:46.248022 after 0.13 seconds
+[0m22:59:46.248022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AD0DFA2150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AD0DF04310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AD0DFA9110>]}
+[0m22:59:46.252849 [debug] [MainThread]: Flushing usage events
+[0m23:01:06.586881 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233C997BCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233C98C8990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233C997A410>]}
+
+
+============================== 23:01:06.590929 | a4795ab9-8568-4054-909b-170dcd6a39c2 ==============================
+[0m23:01:06.590929 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:01:06.590929 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..\\config', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\config', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:01:06.596502 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m23:01:06.598688 [debug] [MainThread]: Command `dbt run` failed at 23:01:06.598688 after 0.11 seconds
+[0m23:01:06.598688 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233C99E0750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233C3249E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233C997ABD0>]}
+[0m23:01:06.599698 [debug] [MainThread]: Flushing usage events
+[0m23:04:12.096861 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206DE05A490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206DDF08A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206DDF082D0>]}
+
+
+============================== 23:04:12.103910 | e2269e49-35ef-43f7-9067-67c4dce3cbd6 ==============================
+[0m23:04:12.103910 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:04:12.107402 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'version_check': 'True', 'profiles_dir': '..\\config', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\config', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:04:12.117407 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m23:04:12.120580 [debug] [MainThread]: Command `dbt run` failed at 23:04:12.120580 after 0.13 seconds
+[0m23:04:12.121590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206DE0521D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206DE052590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206DDE45D90>]}
+[0m23:04:12.122593 [debug] [MainThread]: Flushing usage events
+[0m23:08:07.166918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001867A566D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001867A56ABD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001867A5682D0>]}
+
+
+============================== 23:08:07.173620 | c3d56612-481d-4eb8-aad3-92ee9e09bba4 ==============================
+[0m23:08:07.173620 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:08:07.173620 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..\\config', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\config', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:08:08.553206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c3d56612-481d-4eb8-aad3-92ee9e09bba4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001861230E150>]}
+[0m23:08:08.590119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c3d56612-481d-4eb8-aad3-92ee9e09bba4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018679958B90>]}
+[0m23:08:08.592134 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m23:08:09.039625 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m23:08:14.328002 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:08:14.329122 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:08:14.330687 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.staging
+- models.b2b_event_ticketing.marts
+[0m23:08:14.340737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3d56612-481d-4eb8-aad3-92ee9e09bba4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018614E24350>]}
+[0m23:08:14.547178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3d56612-481d-4eb8-aad3-92ee9e09bba4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018614E5C150>]}
+[0m23:08:14.549182 [info ] [MainThread]: Found 459 macros
+[0m23:08:14.550695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3d56612-481d-4eb8-aad3-92ee9e09bba4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018614DAE6D0>]}
+[0m23:08:14.552711 [warn ] [MainThread]: The selection criterion 'staging' does not match any enabled nodes
+[0m23:08:14.555709 [info ] [MainThread]: 
+[0m23:08:14.556706 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:08:14.562519 [debug] [MainThread]: Command end result
+[0m23:08:14.747108 [debug] [MainThread]: Command `dbt run` succeeded at 23:08:14.746251 after 7.68 seconds
+[0m23:08:14.749141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186791DC450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018673DCEB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018677BD6790>]}
+[0m23:08:14.751160 [debug] [MainThread]: Flushing usage events
+[0m23:10:51.911873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADD07890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADC09A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADC09B10>]}
+
+
+============================== 23:10:51.911873 | 43c2b6f4-d96a-49f6-a248-1641513f272f ==============================
+[0m23:10:51.911873 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:10:51.911873 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '..\\config', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt ls --profiles-dir ..\\config', 'send_anonymous_usage_stats': 'True'}
+[0m23:10:52.890950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '43c2b6f4-d96a-49f6-a248-1641513f272f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178C5A19ED0>]}
+[0m23:10:52.947648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '43c2b6f4-d96a-49f6-a248-1641513f272f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178AD09CA10>]}
+[0m23:10:52.952012 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m23:10:53.318783 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m23:10:53.484931 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:10:53.486171 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:10:53.487116 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.staging
+- models.b2b_event_ticketing.marts
+[0m23:10:53.491212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '43c2b6f4-d96a-49f6-a248-1641513f272f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178C84EE350>]}
+[0m23:10:53.566982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '43c2b6f4-d96a-49f6-a248-1641513f272f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178C8451910>]}
+[0m23:10:53.568356 [info ] [MainThread]: Found 459 macros
+[0m23:10:53.569465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '43c2b6f4-d96a-49f6-a248-1641513f272f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADCB7890>]}
+[0m23:10:53.569985 [warn ] [MainThread]: No nodes selected!
+[0m23:10:53.571055 [debug] [MainThread]: Command `dbt ls` succeeded at 23:10:53.571055 after 1.76 seconds
+[0m23:10:53.571055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADD070D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADC14B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178ADC14C50>]}
+[0m23:10:53.572057 [debug] [MainThread]: Flushing usage events
+[0m23:16:46.098875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B99D68EB50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B99D5B5190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B99D65A810>]}
+
+
+============================== 23:16:46.109131 | 621068ae-a8b9-4e96-b204-7a7466b60b23 ==============================
+[0m23:16:46.109131 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:16:46.112582 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..\\..\\config', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt parse --profiles-dir ..\\..\\config', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:16:47.376618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '621068ae-a8b9-4e96-b204-7a7466b60b23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9B7A08290>]}
+[0m23:16:47.407979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '621068ae-a8b9-4e96-b204-7a7466b60b23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B99CA4CC90>]}
+[0m23:16:47.407979 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m23:16:47.692457 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m23:16:47.861351 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:16:47.862494 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:16:47.863373 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.staging
+- models.b2b_event_ticketing.marts
+[0m23:16:47.867802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '621068ae-a8b9-4e96-b204-7a7466b60b23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9B7EE0090>]}
+[0m23:16:47.874586 [info ] [MainThread]: Performance info: C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\target\perf_info.json
+[0m23:16:47.911273 [debug] [MainThread]: Command `dbt parse` succeeded at 23:16:47.911273 after 1.90 seconds
+[0m23:16:47.911827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B99D05D7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B99D6BE890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B996EDE990>]}
+[0m23:16:47.913495 [debug] [MainThread]: Flushing usage events
+[0m23:17:29.120600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E71AABD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E71AA890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E71AB4D0>]}
+
+
+============================== 23:17:29.120600 | 068e9dc4-c915-46b6-a4b7-5eef5b4efb32 ==============================
+[0m23:17:29.120600 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:17:29.125178 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'debug': 'False', 'profiles_dir': '..\\..\\config', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\..\\config', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:17:30.086775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '068e9dc4-c915-46b6-a4b7-5eef5b4efb32', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D881590210>]}
+[0m23:17:30.124054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '068e9dc4-c915-46b6-a4b7-5eef5b4efb32', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E658CC90>]}
+[0m23:17:30.124054 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m23:17:30.377542 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m23:17:30.529763 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:17:30.529763 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:17:30.529763 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.staging
+- models.b2b_event_ticketing.marts
+[0m23:17:30.534276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '068e9dc4-c915-46b6-a4b7-5eef5b4efb32', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D881A55F90>]}
+[0m23:17:30.612254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '068e9dc4-c915-46b6-a4b7-5eef5b4efb32', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D881A1D390>]}
+[0m23:17:30.612254 [info ] [MainThread]: Found 459 macros
+[0m23:17:30.613254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '068e9dc4-c915-46b6-a4b7-5eef5b4efb32', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E71A7C50>]}
+[0m23:17:30.614254 [warn ] [MainThread]: The selection criterion 'staging' does not match any enabled nodes
+[0m23:17:30.615287 [info ] [MainThread]: 
+[0m23:17:30.615287 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:17:30.617982 [debug] [MainThread]: Command end result
+[0m23:17:30.696884 [debug] [MainThread]: Command `dbt run` succeeded at 23:17:30.696884 after 1.68 seconds
+[0m23:17:30.696884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E0A4E9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E40F3C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D8E5E0C590>]}
+[0m23:17:30.697885 [debug] [MainThread]: Flushing usage events
+[0m23:19:48.939983 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774FF55590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774FE65190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774FE65050>]}
+
+
+============================== 23:19:48.947461 | 51a8d315-c503-4830-9b8c-374f280e1bb5 ==============================
+[0m23:19:48.947461 [info ] [MainThread]: Running with dbt=1.8.4
+[0m23:19:48.947461 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\v-impathan\\Downloads\\Working\\Learning\\Toptal\\project\\ticketing-data-platform\\dbt\\logs', 'profiles_dir': '..\\..\\config', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --select staging --profiles-dir ..\\..\\config', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:19:49.900259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '51a8d315-c503-4830-9b8c-374f280e1bb5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001776A271C50>]}
+[0m23:19:49.930217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '51a8d315-c503-4830-9b8c-374f280e1bb5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774F2F8C10>]}
+[0m23:19:49.930217 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m23:19:50.192476 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m23:19:50.349170 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:19:50.349170 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:19:50.349170 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.b2b_event_ticketing.staging
+- models.b2b_event_ticketing.marts
+[0m23:19:50.352802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '51a8d315-c503-4830-9b8c-374f280e1bb5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001776A77ED50>]}
+[0m23:19:50.416273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '51a8d315-c503-4830-9b8c-374f280e1bb5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001776A75C4D0>]}
+[0m23:19:50.417281 [info ] [MainThread]: Found 459 macros
+[0m23:19:50.418286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '51a8d315-c503-4830-9b8c-374f280e1bb5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001776A69E7D0>]}
+[0m23:19:50.419279 [warn ] [MainThread]: The selection criterion 'staging' does not match any enabled nodes
+[0m23:19:50.420822 [info ] [MainThread]: 
+[0m23:19:50.420822 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m23:19:50.422858 [debug] [MainThread]: Command end result
+[0m23:19:50.506198 [debug] [MainThread]: Command `dbt run` succeeded at 23:19:50.506198 after 1.67 seconds
+[0m23:19:50.506198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774EB7C390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774FE0C890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774D576610>]}
+[0m23:19:50.506198 [debug] [MainThread]: Flushing usage events

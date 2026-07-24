@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_customer
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_reseller
+    columns:
+      - name: reseller_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_organizer
+    columns:
+      - name: organizer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_event
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null

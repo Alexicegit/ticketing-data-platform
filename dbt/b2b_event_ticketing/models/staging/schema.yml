@@ -1,0 +1,38 @@
+version: 2
+
+
+models:
+
+  - name: stg_reseller_daily_sales
+
+    description: "Cleaned reseller sales staging layer"
+
+
+    columns:
+
+
+      - name: transaction_id
+
+        description: "Unique transaction ID"
+
+        tests:
+
+          - unique
+
+          - not_null
+
+
+
+      - name: reseller_id
+
+        tests:
+
+          - not_null
+
+
+
+      - name: total_amount
+
+        tests:
+
+          - not_null

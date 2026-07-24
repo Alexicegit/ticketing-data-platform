@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fact_ticket_sales
+    description: Central fact table for ticket sales reporting
+
+    columns:
+      - name: sales_key
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+
+      - name: reseller_id
+        tests:
+          - relationships:
+              to: ref('dim_reseller')
+              field: reseller_id
+
+      - name: organizer_id
+        tests:
+          - relationships:
+              to: ref('dim_organizer')
+              field: organizer_id
+
+      - name: event_id
+        tests:
+          - relationships:
+              to: ref('dim_event')
+              field: event_id
+
+      - name: total_amount
+        tests:
+          - not_null
+
+      - name: quantity
+        tests:
+          - not_null
