@@ -11,7 +11,7 @@ with reseller_sales as (
     select
 
         r.transaction_id                                 as sales_id,
-        'RESELLER_DAILY_SALES'                           as sales_source,
+        'VENDOR PLATFORM'                                      as sales_source,
 
         r.transaction_id,
         cast(null as varchar)                            as ticket_id,
@@ -74,7 +74,7 @@ ticket_sales as (
     select
 
         t.ticket_id                                      as sales_id,
-        'TICKET_SALES'                                   as sales_source,
+        'B2B PLATFORM'                                   as sales_source,
 
         cast(null as varchar)                            as transaction_id,
 

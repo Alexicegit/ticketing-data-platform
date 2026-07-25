@@ -1,0 +1,116 @@
+version: 2
+
+# ============================================================
+# INT_SALES_TRANSACTIONS
+# ============================================================
+
+models:
+  - name: int_sales_transactions
+    description: >
+      Consolidated sales transaction dataset combining ticket sales from the
+      Event Ticketing Platform and reseller-provided daily sales files.
+      This model standardizes sales records into a common structure and acts
+      as the primary integration layer before dimensional modeling.
+
+    columns:
+
+      - name: sales_id
+        description: Unique identifier for a sales transaction.
+        tests:
+          - unique
+          - not_null
+
+      - name: ticket_id
+        description: Ticket identifier from the platform source system.
+
+      - name: transaction_id
+        description: Transaction identifier supplied by reseller CSV files.
+
+      - name: customer_id
+        description: Customer identifier from the source platform.
+
+      - name: customer_first_name
+        description: Customer first name.
+
+      - name: customer_last_name
+        description: Customer last name.
+
+      - name: organizer_id
+        description: Organizer responsible for the event.
+
+      - name: event_id
+        description: Event identifier.
+        tests:
+          - not_null
+
+      - name: event_name
+        description: Name of the event.
+
+      - name: reseller_id
+        description: Reseller identifier.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_resellers')
+              field: reseller_id
+
+      - name: reseller_name
+        description: Name of the reseller.
+
+      - name: sales_channel
+        description: Channel where ticket was sold.
+        tests:
+          - not_null
+
+      - name: sales_source
+        description: Source of the transaction data.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - B2B PLATFORM
+                - VENDOR PLATFORM        
+
+      - name: source_system
+        description: Originating system that supplied the record.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - NEON
+                - GITHUB
+
+      - name: quantity
+        description: Number of tickets purchased.
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: Price per individual ticket.
+        tests:
+          - not_null
+
+      - name: total_amount
+        description: Total transaction amount.
+        tests:
+          - not_null
+
+      - name: sales_date
+        description: Date the transaction occurred.
+        tests:
+          - not_null
+
+      - name: office_location
+        description: Office or reseller location associated with the transaction.
+
+      - name: source_file_name
+        description: Name of the source file for reseller-provided sales.
+
+      - name: batch_id
+        description: Batch identifier used during ingestion.
+
+      - name: load_ts
+        description: Timestamp when record was loaded into Snowflake.
+
+      - name: updated_at
+        description: Timestamp when record was last updated.

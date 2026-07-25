@@ -1,37 +1,93 @@
 version: 2
 
+# ============================================================
+# DIM_CUSTOMER
+# ============================================================
+
 models:
   - name: dim_customer
+    description: Customer dimension containing customer master attributes.
+
     columns:
       - name: customer_id
+        description: Unique customer identifier.
         tests:
           - unique
           - not_null
 
-  - name: dim_reseller
-    columns:
-      - name: reseller_id
-        tests:
-          - unique
-          - not_null
-
-  - name: dim_organizer
-    columns:
-      - name: organizer_id
-        tests:
-          - unique
-          - not_null
+# ============================================================
+# DIM_EVENT
+# ============================================================
 
   - name: dim_event
+    description: Event dimension containing event metadata.
+
     columns:
       - name: event_id
+        description: Unique event identifier.
         tests:
           - unique
           - not_null
 
+      - name: organizer_id
+        description: Event organizer identifier.
+
+      - name: event_name
+        description: Business name of the event.
+
+      - name: event_type
+        description: Event category.
+
+      - name: event_date
+        description: Date of the event.
+
+# ============================================================
+# DIM_ORGANIZER
+# ============================================================
+
+  - name: dim_organizer
+    description: Organizer dimension.
+
+    columns:
+      - name: organizer_id
+        description: Organizer identifier.
+        tests:
+          - unique
+          - not_null
+
+# ============================================================
+# DIM_RESELLER
+# ============================================================
+
+  - name: dim_reseller
+    description: Reseller dimension containing reseller attributes.
+
+    columns:
+      - name: reseller_id
+        description: Reseller identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: reseller_name
+        description: Reseller name.
+
+      - name: region
+        description: Reseller operating region.
+
+      - name: country
+        description: Reseller country.
+
+# ============================================================
+# DIM_DATE
+# ============================================================
+
   - name: dim_date
+    description: Calendar date dimension used for reporting and time analysis.
+
     columns:
       - name: date_key
+        description: Calendar date.
         tests:
           - unique
           - not_null

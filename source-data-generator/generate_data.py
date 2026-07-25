@@ -373,24 +373,28 @@ sales_df = pd.DataFrame(sales)
 # OPTIONAL BAD RECORDS FOR ETL TESTING
 # =========================================================
 
-bad_rows = min(1000, len(sales_df))
+GENERATE_BAD_DATA = False
 
-bad_indices = random.sample(
-    list(sales_df.index),
-    bad_rows
-)
+if GENERATE_BAD_DATA:
 
-for idx in bad_indices[:300]:
-    sales_df.loc[idx, "quantity"] = -1
+    bad_rows = min(1000, len(sales_df))
 
-for idx in bad_indices[300:600]:
-    sales_df.loc[idx, "unit_price"] = -100
+    bad_indices = random.sample(
+        list(sales_df.index),
+        bad_rows
+    )
 
-for idx in bad_indices[600:800]:
-    sales_df.loc[idx, "sales_channel"] = "FACEBOOK"
+    for idx in bad_indices[:300]:
+        sales_df.loc[idx, "quantity"] = -1
 
-for idx in bad_indices[800:1000]:
-    sales_df.loc[idx, "total_amount"] = 999999
+    for idx in bad_indices[300:600]:
+        sales_df.loc[idx, "unit_price"] = -100
+
+    for idx in bad_indices[600:800]:
+        sales_df.loc[idx, "sales_channel"] = "FACEBOOK"
+
+    for idx in bad_indices[800:1000]:
+        sales_df.loc[idx, "total_amount"] = 999999
 
 # =========================================================
 # EXPORT

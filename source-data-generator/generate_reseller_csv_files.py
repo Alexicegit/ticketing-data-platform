@@ -84,8 +84,8 @@ office_locations = {
 
 sales_channel_mapping = {
     "WEB": "web",
-    "MOBILE_APP": "mobile app",
-    "ON_SITE": "office"
+    "MOBILE_APP": "mobile_app",
+    "ON_SITE": "on_site"
 }
 
 # =========================================================

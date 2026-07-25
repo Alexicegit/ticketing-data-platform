@@ -1,38 +1,261 @@
 version: 2
 
+# ============================================================
+# STG_CUSTOMERS
+# ============================================================
 
 models:
-
-  - name: stg_reseller_daily_sales
-
-    description: "Cleaned reseller sales staging layer"
-
+  - name: stg_customers
+    description: Customer master data from the B2B platform.
 
     columns:
-
-
-      - name: transaction_id
-
-        description: "Unique transaction ID"
-
+      - name: customer_id
         tests:
-
           - unique
-
           - not_null
 
+      - name: email
+        tests:
+          - unique
+          - not_null
 
+      - name: first_name
+        tests:
+          - not_null
+
+      - name: last_name
+        tests:
+          - not_null
+
+      - name: source_system
+        tests:
+          - not_null
+
+      - name: batch_id
+        tests:
+          - not_null
+
+      - name: load_ts
+        tests:
+          - not_null
+
+      - name: updated_at
+        tests:
+          - not_null
+
+# ============================================================
+# STG_EVENTS
+# ============================================================
+
+  - name: stg_events
+    description: Event master records.
+
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+
+      - name: organizer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_organizers')
+              field: organizer_id
+
+      - name: event_name
+        tests:
+          - not_null
+
+      - name: event_type
+        tests:
+          - not_null
+
+      - name: event_date
+        tests:
+          - not_null
+
+      - name: venue
+        tests:
+          - not_null
+
+      - name: region
+        tests:
+          - not_null
+
+# ============================================================
+# STG_ORGANIZERS
+# ============================================================
+
+  - name: stg_organizers
+    description: Organizer master data.
+
+    columns:
+      - name: organizer_id
+        tests:
+          - unique
+          - not_null
+
+      - name: organizer_name
+        tests:
+          - not_null
+
+      - name: region
+        tests:
+          - not_null
+
+# ============================================================
+# STG_RESELLERS
+# ============================================================
+
+  - name: stg_resellers
+    description: Reseller master data.
+
+    columns:
+      - name: reseller_id
+        tests:
+          - unique
+          - not_null
+
+      - name: reseller_name
+        tests:
+          - not_null
+
+      - name: country
+        tests:
+          - not_null
+
+      - name: region
+        tests:
+          - not_null
+
+# ============================================================
+# STG_COMMISSIONS
+# ============================================================
+
+  - name: stg_commissions
+    description: Commission agreements between organizers and resellers.
+
+    columns:
+      - name: agreement_id
+        tests:
+          - unique
+          - not_null
+
+      - name: organizer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_organizers')
+              field: organizer_id
 
       - name: reseller_id
-
         tests:
+          - not_null
+          - relationships:
+              to: ref('stg_resellers')
+              field: reseller_id
 
+      - name: commission_rate
+        tests:
           - not_null
 
+      - name: effective_from
+        tests:
+          - not_null
 
+# ============================================================
+# STG_TICKET_SALES
+# ============================================================
+
+  - name: stg_ticket_sales
+    description: Ticket sales generated from the platform.
+
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: reseller_id
+        tests:
+          - relationships:
+              to: ref('stg_resellers')
+              field: reseller_id
+
+      - name: event_id
+        tests:
+          - relationships:
+              to: ref('stg_events')
+              field: event_id
+
+      - name: sales_channel
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - WEB
+                - MOBILE_APP
+                - ON_SITE
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
 
       - name: total_amount
-
         tests:
+          - not_null
 
+      - name: purchase_date
+        tests:
+          - not_null
+
+# ============================================================
+# STG_RESELLER_DAILY_SALES
+# ============================================================
+
+  - name: stg_reseller_daily_sales
+    description: Sales imported from external reseller CSV files.
+
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+
+      - name: reseller_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_resellers')
+              field: reseller_id
+
+      - name: source_file_name
+        tests:
+          - not_null
+
+      - name: customer_first_name
+        tests:
+          - not_null
+
+      - name: customer_last_name
+        tests:
+          - not_null
+
+      - name: total_amount
+        tests:
+          - not_null
+
+      - name: created_date
+        tests:
           - not_null

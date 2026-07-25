@@ -1,0 +1,80 @@
+{
+    "name": "B2B Event Platform Theme",
+    "dataColors": [
+        "#1B365D",
+        "#2E6F40",
+        "#4B6B94",
+        "#E87722",
+        "#647687",
+        "#70B5C4",
+        "#A6192E",
+        "#A3D9C9"
+    ],
+    "background": "#F4F6F9",
+    "foreground": "#1E293B",
+    "tableAccent": "#1B365D",
+    "visualStyles": {
+        "*": {
+            "*": {
+                "background": [
+                    {
+                        "show": true,
+                        "color": { "solid": { "color": "#FFFFFF" } },
+                        "transparency": 0
+                    }
+                ],
+                "border": [
+                    {
+                        "show": false
+                    }
+                ],
+                "dropShadow": [
+                    {
+                        "show": true,
+                        "color": { "solid": { "color": "#E2E8F0" } },
+                        "position": "Outer",
+                        "preset": "Custom",
+                        "shadowBlur": 10,
+                        "shadowSpread": 1,
+                        "angle": 135,
+                        "distance": 4
+                    }
+                ],
+                "title": [
+                    {
+                        "show": true,
+                        "fontFamily": "Segoe UI Semibold",
+                        "fontSize": 13,
+                        "fontColor": { "solid": { "color": "#0F172A" } }
+                    }
+                ],
+                "padding": [
+                    {
+                        "top": 12,
+                        "bottom": 12,
+                        "left": 12,
+                        "right": 12
+                    }
+                ]
+            }
+        },
+        "card": {
+            "*": {
+                "labels": [
+                    {
+                        "fontFamily": "Segoe UI",
+                        "fontSize": 28,
+                        "color": { "solid": { "color": "#1B365D" } }
+                    }
+                ],
+                "categoryLabels": [
+                    {
+                        "fontFamily": "Segoe UI",
+                        "fontSize": 10,
+                        "color": { "solid": { "color": "#64748B" } }
+                    }
+                ]
+            }
+        }
+    }
+}

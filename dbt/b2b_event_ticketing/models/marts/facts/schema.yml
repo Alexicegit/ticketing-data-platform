@@ -1,43 +1,77 @@
 version: 2
 
 models:
+
+
+# ============================================================
+# FACT_TICKET_SALES
+# ============================================================
+
   - name: fact_ticket_sales
-    description: Central fact table for ticket sales reporting
+    description: >
+      Central fact table containing all ticket sales transactions used for
+      reporting, dashboarding and business analytics.
 
     columns:
-      - name: sales_key
+
+      - name: sales_id
+        description: Unique sales transaction identifier.
         tests:
           - unique
           - not_null
 
       - name: customer_id
+        description: Customer dimension key.
         tests:
           - relationships:
               to: ref('dim_customer')
               field: customer_id
 
+      - name: event_id
+        description: Event dimension key.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_event')
+              field: event_id
+
       - name: reseller_id
+        description: Reseller dimension key.
         tests:
           - relationships:
               to: ref('dim_reseller')
               field: reseller_id
 
       - name: organizer_id
+        description: Organizer dimension key.
         tests:
           - relationships:
               to: ref('dim_organizer')
               field: organizer_id
 
-      - name: event_id
-        tests:
-          - relationships:
-              to: ref('dim_event')
-              field: event_id
-
-      - name: total_amount
+      - name: sales_date
+        description: Transaction date.
         tests:
           - not_null
 
       - name: quantity
+        description: Number of tickets sold.
         tests:
           - not_null
+
+      - name: total_amount
+        description: Revenue generated from the transaction.
+        tests:
+          - not_null
+
+      - name: commission_rate
+        description: Agreed commission percentage.
+
+      - name: commission_amount
+        description: Commission value paid to reseller.
+
+      - name: sales_channel
+        description: Sales channel used for ticket purchase.
+
+      - name: source_system
+        description: Source system from which the transaction originated.
