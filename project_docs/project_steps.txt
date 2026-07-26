@@ -1,0 +1,54 @@
+steps
+cd C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform
+.\start.ps1
+------------------------------------------------------------------------------------
+
+for dbt:
+
+cd .\dbt\b2b_event_ticketing
+dbt debug --profiles-dir ..\..\config
+
+dbt build --profiles-dir ..\..\config
+
+------------------------------------------------------------------------------------
+For Python scripts
+-- to generate data source files and load source data neon db 
+
+cd ..\..\source-data-generator
+
+#-- to load csv files for b2b source data
+python generate_b2b_source_data_csv_files.py 
+
+
+# to load b2b source csv files 
+python load_b2b_source_data_csv_to_neon.py 
+
+# to load reseller csv files
+python generate_reseller_csv_files.py
+------------------------------------------------------------------------------------
+--to load snowflake raw schema 
+
+cd ..\ingestion
+
+-- to load neon db to snowflake raw
+python neon_to_snowflake_loader.py
+
+#to load reseller csv files to snowflake raw
+
+cd ..
+
+--C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\ingestion
+-- 
+python -m ingestion.github_loader
+
+
+
+------------------------------------------------------------------------------------
+
+
+
+
+
+
+------------------------------------------------------------------------------------
+
