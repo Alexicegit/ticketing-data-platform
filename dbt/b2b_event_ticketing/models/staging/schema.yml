@@ -194,6 +194,8 @@ models:
           - relationships:
               to: ref('stg_events')
               field: event_id
+      
+   
 
       - name: sales_channel
         tests:

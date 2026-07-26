@@ -13,6 +13,10 @@ import re
 import pandas as pd
 
 from datetime import datetime, timezone
+
+#from ingestion.github_client import GitHubClient
+#from ingestion.snowflake_loader import SnowflakeLoader
+
 from github_client import GitHubClient
 from snowflake_loader import SnowflakeLoader
 
@@ -90,13 +94,23 @@ TARGET_COLUMNS = [
 
     "SOURCE_FILE_NAME",
 
+    "BATCH_ID",
+
+    "UPDATED_AT",
+
     "LOAD_TS",
 
     "SOURCE_SYSTEM"
+
 ]
 
-
 SOURCE_SYSTEM = "GITHUB"
+
+def generate_batch_id():
+
+    return datetime.now(timezone.utc).strftime(
+        "BATCH_%Y%m%d_%H%M%S"
+    )
 
 
 
@@ -253,25 +267,27 @@ class GitHubLoader:
             f"Mapped columns: {list(df.columns)}"
         )
 
-
-
         # --------------------------------------------------
         # Add metadata columns
         # --------------------------------------------------
 
-        df["RESELLER_ID"] = reseller_id
+        current_ts = datetime.now(timezone.utc).replace(tzinfo=None)
 
+        batch_id = generate_batch_id()
+
+        df["RESELLER_ID"] = reseller_id
 
         df["SOURCE_FILE_NAME"] = file_name
 
+        df["BATCH_ID"] = batch_id
 
-        df["LOAD_TS"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+        df["UPDATED_AT"] = current_ts
 
+        df["LOAD_TS"] = current_ts
 
         df["SOURCE_SYSTEM"] = SOURCE_SYSTEM
 
-
-
+        
         # --------------------------------------------------
         # Add missing target columns
         # --------------------------------------------------

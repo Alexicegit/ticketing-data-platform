@@ -23,6 +23,10 @@ with sales as (
 
         organizer_id,
 
+        seller_type,
+        seller_id,
+        seller_name,
+
         event_id,
 
         sales_date,
@@ -129,6 +133,9 @@ fact_sales as (
         -- ATTRIBUTES
 
         s.sales_channel,
+        s.seller_type,
+        s.seller_id,
+        s.seller_name,
 
 
         -- MEASURES

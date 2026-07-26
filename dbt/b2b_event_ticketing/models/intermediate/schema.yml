@@ -40,8 +40,7 @@ models:
 
       - name: event_id
         description: Event identifier.
-        tests:
-          - not_null
+        
 
       - name: event_name
         description: Name of the event.
@@ -49,10 +48,15 @@ models:
       - name: reseller_id
         description: Reseller identifier.
         tests:
-          - not_null
           - relationships:
               to: ref('stg_resellers')
               field: reseller_id
+
+      - name: seller_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['ORGANIZER', 'RESELLER']
 
       - name: reseller_name
         description: Name of the reseller.

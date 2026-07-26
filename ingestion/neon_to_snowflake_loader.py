@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 import snowflake.connector
 
@@ -370,14 +370,11 @@ def extract(
 
 
 
-    df = pd.read_sql(
-
-        query,
-
-        pg_engine
-
-    )
-
+    with pg_engine.connect() as conn:
+        df = pd.read_sql(
+            text(query),
+            conn
+        )
 
     print(
         f"{table} ROWS: {len(df)}"

@@ -31,6 +31,10 @@ with reseller_sales as (
         rs.reseller_name,
 
         r.sales_channel,
+        
+        r.reseller_id                                   as seller_id,
+        'RESELLER'                                      as seller_type,
+        rs.reseller_name                                as seller_name,
 
         r.number_of_purchased_tickets                    as quantity,
 
@@ -96,6 +100,9 @@ ticket_sales as (
         rs.reseller_name,
 
         t.sales_channel,
+        t.seller_id,
+        t.seller_type,
+        t.seller_name,
 
         t.quantity,
 

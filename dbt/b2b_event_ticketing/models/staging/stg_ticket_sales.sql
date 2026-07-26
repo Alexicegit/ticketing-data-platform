@@ -1,51 +1,71 @@
-{{
-    config(
-        materialized='incremental',
-        unique_key='ticket_id',
-        tags=['staging', 'ticket_sales']
-    )
-}}
+{{ config(
+    materialized='incremental',
+    unique_key='ticket_id',
+    tags=['staging','ticket_sales']
+) }}
 
-with source_data as (
+WITH source_data AS (
 
-    select *
-    from {{ source('raw', 'TICKET_SALES') }}
+    SELECT *
+    FROM {{ source('raw','TICKET_SALES') }}
 
 ),
 
-cleaned as (
+cleaned AS (
 
-    select
-        trim(ticket_id) as ticket_id,
-        trim(event_id) as event_id,
-        trim(customer_id) as customer_id,
-        trim(reseller_id) as reseller_id,
-        upper(trim(sales_channel)) as sales_channel,
-        cast(quantity as number(10,0)) as quantity,
-        cast(unit_price as number(18,2)) as unit_price,
-        cast(total_amount as number(18,2)) as total_amount,
-        try_to_date(purchase_date) as purchase_date,
-        source_system,
-        batch_id,
-        load_ts,
-        updated_at
+    SELECT
 
-    from source_data
+        /* Transaction Key */
+        TRIM(ticket_id)                                  AS ticket_id,
+
+        /* Business Keys */
+        TRIM(event_id)                                   AS event_id,
+        TRIM(organizer_id)                               AS organizer_id,
+        NULLIF(TRIM(reseller_id), '')                    AS reseller_id,
+
+        /* Seller Information */
+        TRIM(seller_id)                                  AS seller_id,
+        UPPER(TRIM(seller_type))                         AS seller_type,
+        UPPER(TRIM(seller_name))                         AS seller_name,
+
+        /* Customer Information */
+        TRIM(customer_id)                                AS customer_id,
+
+        /* Channel Information */
+        UPPER(TRIM(sales_channel))                       AS sales_channel,
+
+        /* Batch Information */
+        TRIM(batch_id)                                   AS batch_id,
+
+        /* Transaction Metrics */
+        CAST(quantity AS NUMBER(10,0))                   AS quantity,
+        CAST(unit_price AS NUMBER(18,2))                 AS unit_price,
+        CAST(total_amount AS NUMBER(18,2))               AS total_amount,
+
+        /* Transaction Date */
+        TRY_TO_DATE(purchase_date)                       AS purchase_date,
+
+        /* Audit Columns */
+        load_ts                                          AS load_ts,
+        TRIM(source_system)                              AS source_system,
+        updated_at                                       AS updated_at
+
+    FROM source_data
 
 )
 
-select *
-from cleaned
+SELECT *
+FROM cleaned
 
 {% if is_incremental() %}
 
-where updated_at >
+WHERE updated_at >
 (
-    select coalesce(
-        max(updated_at),
-        '1900-01-01'::timestamp_ntz
+    SELECT COALESCE(
+        MAX(updated_at),
+        '1900-01-01'::TIMESTAMP_NTZ
     )
-    from {{ this }}
+    FROM {{ this }}
 )
 
 {% endif %}

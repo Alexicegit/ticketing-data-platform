@@ -17,6 +17,31 @@ RESELLER_DIR = DATA_DIR / "reseller_files"
 RESELLER_DIR.mkdir(parents=True, exist_ok=True)
 
 # =========================================================
+# CLEAN OUTPUT FOLDER
+# =========================================================
+
+# Set to True to delete existing reseller CSV files.
+# Set to False to keep existing files.
+CLEAN_OUTPUT_FOLDER = True
+
+
+def cleanup_output_folder(output_dir: Path):
+    """
+    Delete all existing reseller CSV files.
+    """
+    if not output_dir.exists():
+        return
+
+    for file in output_dir.glob("*.csv"):
+        file.unlink()
+        print(f"Deleted {file.name}")
+
+
+if CLEAN_OUTPUT_FOLDER:
+    print("Cleaning reseller output directory...")
+    cleanup_output_folder(RESELLER_DIR)
+
+# =========================================================
 # LOAD GENERATED SOURCE DATA
 # =========================================================
 
@@ -54,6 +79,7 @@ files_to_generate = [
     ("07012020", "RES001"),
     ("08012020", "RES005"),
     ("09012020", "RES010")
+    #,("02002020", "RES010"),
 ]
 
 # =========================================================

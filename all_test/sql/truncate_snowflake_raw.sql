@@ -33,5 +33,22 @@ SET LAST_UPDATED_AT='1900-01-01 00:00:00';
 
 -- reseller daily sales table --
 TRUNCATE TABLE B2B_EVENT_TICKETING.RAW.RESELLER_DAILY_SALES;
-
 TRUNCATE TABLE B2B_EVENT_TICKETING.AUDIT.FILE_LOAD_HISTORY;
+
+
+----------------------------------------
+
+INSERT INTO AUDIT.ETL_WATERMARK
+(
+    SOURCE_TABLE,
+    LAST_UPDATED_AT
+)
+VALUES
+    ('ORGANIZERS', '1900-01-01 00:00:00'),
+    ('RESELLERS', '1900-01-01 00:00:00'),
+    ('CUSTOMERS', '1900-01-01 00:00:00'),
+    ('EVENTS', '1900-01-01 00:00:00'),
+    ('COMMISSION_AGREEMENTS', '1900-01-01 00:00:00'),
+    ('TICKET_SALES', '1900-01-01 00:00:00');
+
+--------------------------------------------------------------------------

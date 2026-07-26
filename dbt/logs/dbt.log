@@ -912,3 +912,147 @@ There are 2 unused configuration paths:
 [0m23:19:50.506198 [debug] [MainThread]: Command `dbt run` succeeded at 23:19:50.506198 after 1.67 seconds
 [0m23:19:50.506198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774EB7C390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774FE0C890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001774D576610>]}
 [0m23:19:50.506198 [debug] [MainThread]: Flushing usage events
+[0m05:22:51.951064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DE59F7B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DE594CC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DE59379D0>]}
+
+
+============================== 05:22:51.958066 | dc4ecfc6-7ac0-4338-a3aa-6f60f0fb2dcd ==============================
+[0m05:22:51.958066 [info ] [MainThread]: Running with dbt=1.8.4
+[0m05:22:51.959065 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\v-impathan\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m05:22:51.960738 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m05:22:51.962996 [debug] [MainThread]: Command `dbt build` failed at 05:22:51.962996 after 0.16 seconds
+[0m05:22:51.963521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DE59EDAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DE59EE410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DE59F4A50>]}
+[0m05:22:51.963521 [debug] [MainThread]: Flushing usage events
+[0m05:23:18.336434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D6C035310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D6C0359D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D6C035E90>]}
+
+
+============================== 05:23:18.343370 | d0d9a4d4-b49f-480d-934c-c04efa07fd45 ==============================
+[0m05:23:18.343370 [info ] [MainThread]: Running with dbt=1.8.4
+[0m05:23:18.344372 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\v-impathan\\.dbt', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build --profile ../../config', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m05:23:18.345374 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m05:23:18.347372 [debug] [MainThread]: Command `dbt build` failed at 05:23:18.346370 after 0.15 seconds
+[0m05:23:18.347372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D65A0D890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D6C085E50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D6C085590>]}
+[0m05:23:18.348371 [debug] [MainThread]: Flushing usage events
+[0m05:27:46.550416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AE1AC7B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AE1ABDED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AE1A1CF10>]}
+
+
+============================== 05:27:46.558781 | 6eeade4f-25d1-4ab6-a929-7800a3c4b3fb ==============================
+[0m05:27:46.558781 [info ] [MainThread]: Running with dbt=1.8.4
+[0m05:27:46.559818 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '../config', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug --profiles-dir ../config', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m05:27:46.615099 [info ] [MainThread]: dbt version: 1.8.4
+[0m05:27:46.616115 [info ] [MainThread]: python version: 3.11.9
+[0m05:27:46.617102 [info ] [MainThread]: python path: C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\venv\Scripts\python.exe
+[0m05:27:46.617102 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m05:27:46.628203 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m05:27:46.630203 [debug] [MainThread]: Command `dbt debug` failed at 05:27:46.630203 after 0.22 seconds
+[0m05:27:46.631203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AE1AF5150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ADB47D910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AE1ABDC50>]}
+[0m05:27:46.631203 [debug] [MainThread]: Flushing usage events
+[0m05:28:32.613086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290792AAF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002907C1D4610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002907B1B7D10>]}
+
+
+============================== 05:28:32.617630 | 7f5cc9e8-57e4-4016-b742-0ebc44746a00 ==============================
+[0m05:28:32.617630 [info ] [MainThread]: Running with dbt=1.8.4
+[0m05:28:32.618627 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '../config', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug --profiles-dir ../config', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m05:28:32.671221 [info ] [MainThread]: dbt version: 1.8.4
+[0m05:28:32.671221 [info ] [MainThread]: python version: 3.11.9
+[0m05:28:32.672223 [info ] [MainThread]: python path: C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\venv\Scripts\python.exe
+[0m05:28:32.673726 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m05:28:48.169779 [info ] [MainThread]: Using profiles dir at ../config
+[0m05:28:48.172791 [info ] [MainThread]: Using profiles.yml file at ../config\profiles.yml
+[0m05:28:48.174794 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml
+[0m05:28:48.182323 [info ] [MainThread]: adapter type: snowflake
+[0m05:28:48.184316 [info ] [MainThread]: adapter version: 1.8.3
+[0m05:28:48.187179 [info ] [MainThread]: Configuration:
+[0m05:28:48.189177 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m05:28:48.191203 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m05:28:48.193202 [info ] [MainThread]: Required dependencies:
+[0m05:28:48.194197 [debug] [MainThread]: Executing "git --help"
+[0m05:28:48.462566 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m05:28:48.463565 [debug] [MainThread]: STDERR: "b''"
+[0m05:28:48.466086 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m05:28:48.468156 [info ] [MainThread]: Connection:
+[0m05:28:48.471713 [info ] [MainThread]:   account: fxgfljg-rn92157
+[0m05:28:48.474244 [info ] [MainThread]:   user: imtiyazfgs
+[0m05:28:48.476261 [info ] [MainThread]:   database: B2B_EVENT_TICKETING
+[0m05:28:48.477257 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m05:28:48.479255 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m05:28:48.481256 [info ] [MainThread]:   schema: STAGING
+[0m05:28:48.483260 [info ] [MainThread]:   authenticator: None
+[0m05:28:48.485271 [info ] [MainThread]:   oauth_client_id: None
+[0m05:28:48.488272 [info ] [MainThread]:   query_tag: None
+[0m05:28:48.490270 [info ] [MainThread]:   client_session_keep_alive: False
+[0m05:28:48.492272 [info ] [MainThread]:   host: None
+[0m05:28:48.494272 [info ] [MainThread]:   port: None
+[0m05:28:48.495269 [info ] [MainThread]:   proxy_host: None
+[0m05:28:48.497271 [info ] [MainThread]:   proxy_port: None
+[0m05:28:48.498273 [info ] [MainThread]:   protocol: None
+[0m05:28:48.500806 [info ] [MainThread]:   connect_retries: 1
+[0m05:28:48.508343 [info ] [MainThread]:   connect_timeout: None
+[0m05:28:48.510345 [info ] [MainThread]:   retry_on_database_errors: False
+[0m05:28:48.511344 [info ] [MainThread]:   retry_all: False
+[0m05:28:48.514346 [info ] [MainThread]:   insecure_mode: False
+[0m05:28:48.517880 [info ] [MainThread]:   reuse_connections: None
+[0m05:28:48.524881 [info ] [MainThread]: Registered adapter: snowflake=1.8.3
+[0m05:28:49.879852 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m05:28:49.880852 [debug] [MainThread]: Using snowflake connection "debug"
+[0m05:28:49.881851 [debug] [MainThread]: On debug: select 1 as id
+[0m05:28:49.881851 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:28:51.992169 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.110 seconds
+[0m05:28:51.995787 [debug] [MainThread]: On debug: Close
+[0m05:28:52.097209 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m05:28:52.097209 [info ] [MainThread]: [31m1 check failed:[0m
+[0m05:28:52.098208 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml> not found
+
+[0m05:28:52.099205 [debug] [MainThread]: Command `dbt debug` failed at 05:28:52.099205 after 19.59 seconds
+[0m05:28:52.100212 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m05:28:52.100212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002907C1D4610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029075A30C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029075A30910>]}
+[0m05:28:52.103710 [debug] [MainThread]: Flushing usage events
+[0m05:30:16.367306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251C0D13ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251C0CCE8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251C0CFEA10>]}
+
+
+============================== 05:30:16.372803 | dcd57b13-db57-4472-b3ee-611274150a83 ==============================
+[0m05:30:16.372803 [info ] [MainThread]: Running with dbt=1.8.4
+[0m05:30:16.373808 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '../../config', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug --profiles-dir ../../config', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m05:30:16.406825 [info ] [MainThread]: dbt version: 1.8.4
+[0m05:30:16.407699 [info ] [MainThread]: python version: 3.11.9
+[0m05:30:16.408720 [info ] [MainThread]: python path: C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\venv\Scripts\python.exe
+[0m05:30:16.408720 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m05:30:16.409699 [info ] [MainThread]: Using profiles dir at ../../config
+[0m05:30:16.409699 [info ] [MainThread]: Using profiles.yml file at ../../config\profiles.yml
+[0m05:30:16.410699 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml
+[0m05:30:16.410699 [info ] [MainThread]: Configuration:
+[0m05:30:16.411725 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m05:30:16.411725 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m05:30:16.412699 [info ] [MainThread]: Required dependencies:
+[0m05:30:16.414226 [debug] [MainThread]: Executing "git --help"
+[0m05:30:16.491860 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m05:30:16.492383 [debug] [MainThread]: STDERR: "b''"
+[0m05:30:16.492383 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m05:30:16.493400 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m05:30:16.494402 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m05:30:16.494402 [info ] [MainThread]: dbt looked for a profiles.yml file in ../../config\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m05:30:16.495400 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt\dbt_project.yml> not found
+
+[0m05:30:16.496405 [debug] [MainThread]: Command `dbt debug` failed at 05:30:16.495400 after 0.25 seconds
+[0m05:30:16.496405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251C0CCE8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251C0D1ECD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251C0CD5350>]}
+[0m05:30:16.497919 [debug] [MainThread]: Flushing usage events
