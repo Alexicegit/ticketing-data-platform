@@ -14,11 +14,11 @@ import pandas as pd
 
 from datetime import datetime, timezone
 
-#from ingestion.github_client import GitHubClient
-#from ingestion.snowflake_loader import SnowflakeLoader
+from ingestion.github_client import GitHubClient
+from ingestion.snowflake_loader import SnowflakeLoader
 
-from github_client import GitHubClient
-from snowflake_loader import SnowflakeLoader
+#from github_client import GitHubClient
+#from snowflake_loader import SnowflakeLoader
 
 
 # ==========================================================
