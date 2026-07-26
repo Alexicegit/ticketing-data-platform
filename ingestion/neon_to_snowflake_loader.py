@@ -181,46 +181,34 @@ TABLES = {
 
 
 
-
 # ============================================================
 # NEON CONNECTION
 # ============================================================
-
 def get_neon_connection():
 
-
-    connection_string = (
-
-        "postgresql+psycopg2://"
-
-        f"{os.getenv('NEON_USER')}:"
-
-        f"{os.getenv('NEON_PASSWORD')}@"
-
-        f"{os.getenv('NEON_HOST')}:"
-
-        f"{os.getenv('NEON_PORT')}/"
-
-        f"{os.getenv('NEON_DATABASE')}"
-
-        "?sslmode=require"
-
+    connection_string = os.getenv(
+        "POSTGRES_CONNECTION_STRING"
     )
 
+    if not connection_string:
+        raise ValueError(
+            "POSTGRES_CONNECTION_STRING is not set."
+        )
+
+    print(f"Using Neon URL: {connection_string}")
 
     engine = create_engine(
-
         connection_string,
-
-        pool_pre_ping=True
-
+        pool_pre_ping=True,
+        pool_recycle=300,
+        pool_size=5,
+        max_overflow=10,
+        connect_args={
+            "connect_timeout": 30
+        }
     )
 
-
     return engine
-
-
-
 
 # ============================================================
 # SNOWFLAKE CONNECTION
@@ -369,7 +357,7 @@ def extract(
     """
 
 
-
+    print(f"Connecting to Neon for {table}")
     with pg_engine.connect() as conn:
         df = pd.read_sql(
             text(query),
@@ -862,6 +850,9 @@ def main():
     try:
 
 
+        print("Creating Neon connection...")
+        print("POSTGRES_CONNECTION_STRING:", os.getenv("POSTGRES_CONNECTION_STRING")
+)
         pg = get_neon_connection()
 
 
@@ -1089,19 +1080,9 @@ def main():
 
 
     finally:
-
-
-
         if pg:
-
-
             pg.dispose()
-
-
-
         if sf:
-
-
             sf.close()
 
 

@@ -20,6 +20,9 @@ x-airflow-common: &airflow-common
     - ./sample_data:/opt/airflow/sample_data
     - ./dbt:/opt/airflow/dbt
     - ./ingestion:/opt/airflow/ingestion
+    - ./sql:/opt/airflow/sql
+    - ./airflow/dags:/opt/airflow/dags
+    - ./ingestion:/opt/airflow/ingestion
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     redis:

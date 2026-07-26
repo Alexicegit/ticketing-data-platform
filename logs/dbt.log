@@ -72,3 +72,17 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m20:05:08.418948 [debug] [MainThread]: Command `dbt debug` failed at 20:05:08.418948 after 0.19 seconds
 [0m20:05:08.418948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023858261E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238517E0290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238582687D0>]}
 [0m20:05:08.418948 [debug] [MainThread]: Flushing usage events
+[0m13:09:09.106936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000279BD949D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000279BD9CD810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000279BDE17B10>]}
+
+
+============================== 13:09:09.112140 | d6e78e7a-1bdd-469b-a1ca-cf0d7f742af5 ==============================
+[0m13:09:09.112140 [info ] [MainThread]: Running with dbt=1.8.4
+[0m13:09:09.113122 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'config', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt build --profiles-dir config', 'send_anonymous_usage_stats': 'True'}
+[0m13:09:09.113632 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\v-impathan\Downloads\Working\Learning\Toptal\project\ticketing-data-platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:09:09.115251 [debug] [MainThread]: Command `dbt build` failed at 13:09:09.114730 after 0.16 seconds
+[0m13:09:09.115764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000279B74F7D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000279BDDBD610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000279BDDC4690>]}
+[0m13:09:09.115764 [debug] [MainThread]: Flushing usage events

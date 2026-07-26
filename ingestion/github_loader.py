@@ -4,21 +4,23 @@ github_loader.py
 Loads new reseller CSV files from GitHub into
 Snowflake RAW schema.
 
-This script is intended to be executed daily by Airflow.
+Executed daily by Airflow.
 """
 
 
 import logging
 import re
+
 import pandas as pd
 
 from datetime import datetime, timezone
 
-from ingestion.github_client import GitHubClient
-from ingestion.snowflake_loader import SnowflakeLoader
 
 #from github_client import GitHubClient
 #from snowflake_loader import SnowflakeLoader
+
+from .github_client import GitHubClient
+from .snowflake_loader import SnowflakeLoader
 
 
 # ==========================================================
@@ -271,7 +273,10 @@ class GitHubLoader:
         # Add metadata columns
         # --------------------------------------------------
 
-        current_ts = datetime.now(timezone.utc).replace(tzinfo=None)
+        #current_ts = datetime.now(timezone.utc).replace(tzinfo=None)
+       # current_ts = pd.Timestamp.utcnow().tz_localize(None)
+        current_ts = pd.Timestamp.utcnow()
+       
 
         batch_id = generate_batch_id()
 

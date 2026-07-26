@@ -1,4 +1,4 @@
-ticketing_analytics:
+b2b_event_ticketing:
   target: dev
   outputs:
     dev:
